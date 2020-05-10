@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="17px" viewBox="0 0 24 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>icon-menu</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Onee-Home-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="02---Home---Travel-Advisor---Mobile" transform="translate(-21.000000, -21.000000)" fill="#000000">
+            <g id="Header">
+                <g id="icon-menu" transform="translate(21.000000, 21.000000)">
+                    <g id="Path">
+                        <path d="M23.0625,7.5 L0.9375,7.5 C0.41971875,7.5 0,7.91971875 0,8.4375 C0,8.95528125 0.41971875,9.375 0.9375,9.375 L23.0625,9.375 C23.5802812,9.375 24,8.95528125 24,8.4375 C24,7.91971875 23.5802812,7.5 23.0625,7.5 Z" fill-rule="nonzero"></path>
+                        <path d="M23.0625,-1.66533454e-16 L0.9375,-1.66533454e-16 C0.41971875,-1.66533454e-16 0,0.41971875 0,0.9375 C0,1.45528125 0.41971875,1.875 0.9375,1.875 L23.0625,1.875 C23.5802812,1.875 24,1.45528125 24,0.9375 C24,0.41971875 23.5802812,-1.66533454e-16 23.0625,-1.66533454e-16 Z" fill-rule="nonzero"></path>
+                        <path d="M23.0625,15 L0.9375,15 C0.41971875,15 0,15.4197187 0,15.9375 C0,16.4552812 0.41971875,16.875 0.9375,16.875 L23.0625,16.875 C23.5802812,16.875 24,16.4552812 24,15.9375 C24,15.4197187 23.5802812,15 23.0625,15 Z" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

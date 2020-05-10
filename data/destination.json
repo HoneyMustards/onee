@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Florida",
+        "price": "6.900",
+        "image": "./florida.png"
+    },
+    {
+        "name": "Dubai",
+        "price": "6.900",
+        "image": "./dubai.png"
+    },
+    {
+        "name": "Hawai",
+        "price": "6.900",
+        "image": "./hawai.png"
+    },
+    {
+        "name": "Oslo",
+        "price": "6.900",
+        "image": "./oslo.png"
+    },
+    {
+        "name": "Florida",
+        "price": "6.900",
+        "image": "./florida.png"
+    },
+    {
+        "name": "Dubai",
+        "price": "6.900",
+        "image": "./dubai.png"
+    },
+    {
+        "name": "Hawai",
+        "price": "6.900",
+        "image": "./hawai.png"
+    },
+    {
+        "name": "Oslo",
+        "price": "6.900",
+        "image": "./oslo.png"
+    }
+]

@@ -1,0 +1,23 @@
+
+@import "./bootstrap/bootstrap.scss";
+@import "./settings";
+@import "./components/_components";
+@import "./layout";
+@import "./icons";
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Avenir Next';
+
+    & > div {
+        width: 100%;
+    }
+}
+
+.page {
+
+    &-wrap {
+        padding: 0;
+    }
+}

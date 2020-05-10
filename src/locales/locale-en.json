@@ -1,0 +1,14 @@
+{
+  "header.select": "Select Customer",
+  "title": "Hello Next.js",
+  "nav.login": "Login",
+  "nav.register": "Register",
+  "home.travel-inspiration": "Travel inspiration",
+  "home.travel-inspiration-desc": "Our latest travel tips, expert hacks and industry insights to help make your journey one to remember",
+  "home.trending-inspiration": "Trending Destinations",
+  "home.trending-inspiration-desc": "List of directions to most popular places based on user preferences.",
+  "home.tab-destination": "Destination",
+  "home.tab-destination-desc": "List of directions to most popular places based on user preferences.",
+  "newsletter.title": "Newsletter Subscription",
+  "newsletter.desc": "Get our newsletter and stay current on vacation rental deals and specials."
+}

@@ -1,0 +1,48 @@
+.newsletter {
+    padding: 50px 60px;
+    background: url('../../img/newsletter-bg.jpg') left 0% no-repeat;
+    background-size: cover;
+
+    @include media-breakpoint-down(xs){
+        padding: 30px;
+    }
+
+    .section-title, 
+    .section-description {
+        margin-left: 0;
+        color: #fff;
+        text-align: left;
+
+        @include media-breakpoint-down(md){
+            margin: auto;
+            text-align: center;
+        }
+    }
+
+    &-content {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .input-group {
+            width: 80%;
+            
+            @include media-breakpoint-down(md){
+                width: 100%
+            }
+        }
+    }
+
+    &-hr {
+        width: 100px;
+        height: 2px;
+        background: #fff;
+        margin-left: 0;
+        margin-bottom: 0;
+        border: 0;
+
+        @include media-breakpoint-down(md){
+            margin: 20px auto;
+        }
+    }
+}

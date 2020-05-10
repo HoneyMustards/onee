@@ -1,0 +1,64 @@
+[
+    {
+        "destination": "Ko Samui",
+        "items": [
+            {
+                "name": "Villa Ares",
+                "image": "./villa-ares.png"
+            },
+            {
+                "name": "Terra",
+                "image": "./terra.png"
+            },
+            {
+                "name": "Oscar",
+                "image": "./oscar.png"
+            },
+            {
+                "name": "Villa Ares",
+                "image": "./villa-ares.png"
+            },
+            {
+                "name": "Terra",
+                "image": "./terra.png"
+            },
+            {
+                "name": "Oscar",
+                "image": "./oscar.png"
+            },
+            {
+                "name": "Villa Ares",
+                "image": "./villa-ares.png"
+            },
+            {
+                "name": "Terra",
+                "image": "./terra.png"
+            }
+        ]
+    },
+    {
+        "destination": "Bali",
+        "items": [
+            {
+                "name": "Oscar",
+                "image": "./oscar.png"
+            },
+            {
+                "name": "Villa Ares",
+                "image": "./villa-ares.png"
+            },
+            {
+                "name": "Terra",
+                "image": "./terra.png"
+            },
+            {
+                "name": "Villa Ares",
+                "image": "./villa-ares.png"
+            },
+            {
+                "name": "Terra",
+                "image": "./terra.png"
+            }
+        ]
+    }
+]

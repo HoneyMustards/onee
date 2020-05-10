@@ -1,0 +1,42 @@
+[
+    {
+        "name": "England",
+        "number": "+44 0330 0436 633",
+        "flag": "./en_flag.png"
+    },
+    {
+        "name": "Germany",
+        "number": "+49 30 8009 8973",
+        "flag": "./de_flag.png"
+    },
+    {
+        "name": "Canada",
+        "number": "+1 437 370 0953",
+        "flag": "./ca_flag.png"
+    },
+    {
+        "name": "France",
+        "number": "+33 1 73 03 66 88",
+        "flag": "./fr_flag.png"
+    },
+    {
+        "name": "Spanish",
+        "number": "+34 919 170 133",
+        "flag": "./sp_flag.png"
+    },
+    {
+        "name": "ABD",
+        "number": "+1 917 268 9343",
+        "flag": "./abd_flag.png"
+    },
+    {
+        "name": "Ireland",
+        "number": "+353 01 592 1 863",
+        "flag": "./ir_flag.png"
+    },
+    {
+        "name": "Italy",
+        "number": "+39 069 931 3355",
+        "flag": "./it_flag.png"
+    }
+]

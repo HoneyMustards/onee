@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300px" height="166px" viewBox="0 0 300 166" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>Profile</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Profile" fill="#4A4A4A" fill-rule="nonzero">
+            <g id="icon-down">
+                <path d="M274.183489,4.46048465 L150.014327,128.813957 L25.8451649,4.44551657 C19.9251695,-1.48183886 10.3487797,-1.48183886 4.42878439,4.44551657 C-1.47626147,10.372872 -1.47626147,19.9761358 4.42878439,25.9034912 L139.299284,160.986575 L139.299284,160.986575 L139.299284,160.986575 C145.20433,166.91393 154.79567,166.91393 160.700716,160.986575 L295.571215,25.9047386 C301.476262,19.9773831 301.476262,10.3591513 295.571215,4.43179584 C289.681118,-1.46687079 280.088534,-1.46687079 274.183489,4.46048465 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>

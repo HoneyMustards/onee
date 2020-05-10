@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>icon-messenger</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Footer" transform="translate(-1084.000000, -360.000000)" fill="#CCCCCC">
+            <g id="Social-Media">
+                <g transform="translate(966.000000, 360.000000)">
+                    <g id="icon-messenger" transform="translate(118.000000, 0.000000)">
+                        <g>
+                            <polygon id="Path" fill-rule="nonzero" points="15.0122828 13.2266667 9.81333333 18.7733333 14.5446809 16.1573908 17.0168505 18.7733333 22.1866667 13.2266667 17.50771 15.7967242"></polygon>
+                            <path d="M16,0 C7.16479494,0 0,7.16479494 0,16 C0,24.8352051 7.16479494,32 16,32 C24.8352051,32 32,24.8352051 32,16 C32,7.16479494 24.8352051,0 16,0 Z M16.125,24.5646972 C15.1345215,24.5646972 14.1784668,24.4248047 13.2790528,24.1657715 L10.0524903,26 L10.0524903,22.5493164 C7.89135744,20.9047851 6.5112305,18.4001465 6.5112305,15.5949707 C6.5112305,10.6408691 10.8154297,6.625 16.125,6.625 C21.4348144,6.625 25.7387695,10.6408691 25.7387695,15.5949707 C25.7387695,20.548584 21.4348144,24.5646973 16.125,24.5646973 L16.125,24.5646972 Z" id="Shape" fill-rule="nonzero"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

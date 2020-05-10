@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="14px" viewBox="0 0 15 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-checkbox-checked" transform="translate(-5.000000, -5.000000)" fill="#EF5729" fill-rule="nonzero">
+            <g id="Group-4">
+                <g>
+                    <path d="M10.3399638,19 C9.87215079,19 9.42970631,18.7963986 9.14527771,18.4471961 L5.3038793,13.7277632 C4.80424812,13.1139589 4.93431561,12.2399528 5.59411256,11.7749496 C6.25498443,11.3097463 7.19383528,11.4315472 7.69368145,12.0449514 L10.2202157,15.1485731 L16.5746042,5.65690684 C17.0121039,5.00390228 17.9359056,4.80410088 18.6393451,5.21050372 C19.3419245,5.61730656 19.5564822,6.47731256 19.1187674,7.13091713 L11.6122604,18.3429954 C11.3514805,18.7327981 10.9012964,18.9779998 10.4083299,18.9988 C10.3853262,18.9996 10.3627525,19 10.3399638,19 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

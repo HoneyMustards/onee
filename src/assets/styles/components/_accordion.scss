@@ -1,0 +1,27 @@
+.accordion {
+    .card {
+        background-color: #fff;
+        border: 0;
+
+        &:not(:last-of-type) {
+            border-bottom: 1px solid rgba(0, 0, 0, .2);
+        }
+
+        &-header {
+            padding: 16px 0;
+            background-color: #fff;
+            border-bottom: 0;
+        }
+
+        &-body {
+            padding: 0 0 16px;
+        }
+
+        .btn-link {
+            padding: 0;
+            color: $color-text;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+}

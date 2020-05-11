@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-const Checkbox = props => {
-    
+const Checkbox = props => {    
     return (
         <label className={`form-checkbox ${props.className}`}>{props.children}
             <input type={props.type} defaultChecked={props.checked} name={props.name} className={props.className} />
@@ -14,7 +13,10 @@ const Checkbox = props => {
 Checkbox.propTypes = {
     type: PropTypes.string,
     className: PropTypes.string,
-    checked: PropTypes.string,
+    checked: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.bool,
+    ]),
     label: PropTypes.string
 }
 
@@ -23,6 +25,6 @@ Checkbox.defaultProps = {
     className: '',
     checked: '',
     label: ''
-} 
+}
 
 export default Checkbox;

@@ -5,6 +5,8 @@ import Overlay from 'react-bootstrap/Overlay';
 import Modal from 'react-bootstrap/Modal';
 import OverlayPrice from './filter-box/overlay-price';
 import Counter from './visitor-counter';
+import filterData from '../../../data/filter'
+import ModalFilterBody from './filter-box/modal-filter-body';
 
 
 const FilterBox = () => {
@@ -177,11 +179,13 @@ const FilterBox = () => {
             {/* sort popover */}
 
 
-            <Modal show={showFilterModal} onHide={handleHideFilter}>
+            <Modal show={showFilterModal} onHide={handleHideFilter} size="lg">
                 <Modal.Header closeButton>
                     <Modal.Title><i className="icon icon-search  mr-2"></i> More Filter</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                <Modal.Body>
+                    <ModalFilterBody list={filterData} />
+                </Modal.Body>
             </Modal>
 
         </div>

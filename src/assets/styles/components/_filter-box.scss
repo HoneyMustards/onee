@@ -1,0 +1,99 @@
+.filter-box {
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+
+    &-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+        max-width: 960px;
+
+        div {
+            margin: 0 25px;
+
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__copy {
+        display: inline-block;        
+        position: relative;
+        padding: 0 16px;
+        color: #4a4a4a;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+
+        &:after {
+            position: absolute;
+            right: 0;
+            content: "˅";
+        }
+
+        &.active,
+        &:hover,
+        &:focus,
+        &:active,
+        &:not([href]):hover {
+            color: $color-link;
+
+            &:after {
+                content: "^";
+            }
+        }
+        
+    }
+
+    &__button {
+        padding: 0 24px 0 16px;
+        height: 34px;
+        line-height: 34px;
+        background-color: #fff;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        border: solid 1px #f1561a;
+        color: $color-secondary;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+        &.active,
+        &:hover,
+        &:active,
+        &:focus,
+        &:not(:disabled):not(.disabled):active {
+            color: $color-link;
+            border-color: $color-link;
+            background-color: #fff;
+            outline: none;
+            transition: ease-in-out .4s all;
+        }
+    }
+
+    &__clear {
+        position: relative;        
+        color: $color-secondary;
+
+        &::before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background-color: $color-secondary;
+            content: "";
+        }
+
+        p {
+            margin-bottom: 0;
+            margin-left: 16px;
+        }
+    }
+}

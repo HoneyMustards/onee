@@ -1,0 +1,50 @@
+.card-item {
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border: none;
+
+    .swiper-container {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .swiper-pagination {
+        text-align: left;
+        left: 15px;
+    }
+
+    .swiper-pagination-bullet {
+        background-color: #fff;
+        opacity: .3;
+        
+        &-active {
+            opacity: 1;
+        }
+    }
+
+    .card-header {
+        padding: 0;
+        position: relative;        
+
+        .badge-radius {
+            position: absolute;
+            bottom: -24px;
+            right: 15px;
+            z-index: 9;
+        }
+    }
+    
+
+    .card-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: $color-text;
+    }
+
+    .text-muted {
+        color: #9b9b9b !important;
+        font-size: 14px;
+        font-weight: normal;
+    }
+}

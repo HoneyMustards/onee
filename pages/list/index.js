@@ -20,20 +20,28 @@ const List = () => {
         <SearchBox hasAddFavourite={true} />
       </div>
       <FilterBox />
-      <div className="container">
-        <div className="row">
-          <div className="col-4 mt-3 mb-3">
-              <CardItem />
+      <div style={{ position: 'relative' }}>
+        <div className="map-toggle">Show Map</div>
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <p className="mt-5 summmary">20 of the 30 villas are listing. You may also contact us about our Hidden Gems. <span className="summary-contact">Contact with the nearest travel advisor.</span></p>
+            </div>
           </div>
-          <div className="col-4 mt-3 mb-3">
+          <div className="row">
+            <div className="col-4 mt-3 mb-3">
               <CardItem />
+            </div>
+            <div className="col-4 mt-3 mb-3">
+              <CardItem />
+            </div>
+            <div className="col-4 mt-3 mb-3">
+              <CardItem />
+            </div>
+            <div className="col-4 mt-3 mb-3">
+              <CardItem />
+            </div>
           </div>
-          <div className="col-4 mt-3 mb-3">
-              <CardItem />
-          </div>
-          <div className="col-4 mt-3 mb-3">
-              <CardItem />
-          </div>                              
         </div>
       </div>
       <Newsletter />

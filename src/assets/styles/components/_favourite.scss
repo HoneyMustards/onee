@@ -1,0 +1,10 @@
+.favourite {
+    font-size: 24px;
+    color: #d0d1d5;
+    cursor: pointer;
+
+    &:hover,
+    &.add {
+        color: #f8001e;
+    }
+}

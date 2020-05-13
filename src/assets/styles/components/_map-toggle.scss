@@ -14,9 +14,11 @@
         color: $color-text;
         line-height: 44px;
         cursor: pointer;
+        z-index: 3;
 
         &.is-open {
             right: 500px;
+            transition:  ease-in .2s all;
         }        
     }
 }

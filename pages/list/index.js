@@ -15,19 +15,19 @@ import globalStyles from './style'
 
 const List = () => {
 
-  let isOpenClass = '';
+  
   const [isMapOpen, setIsMapOpen] = useState(false);
+  const [openClass, setOpenClass] = useState();
 
   const toggleMap = () => setIsMapOpen(!isMapOpen);
 
   useEffect(() => {
     console.log('ss');
     if (isMapOpen) {
-      isOpenClass = 'is-open'
+      setOpenClass('is-open')
     } else {
-      isOpenClass = ''
+      setOpenClass('')
     }
-    console.log(isOpenClass);
   }, [isMapOpen])
 
   return (
@@ -37,8 +37,10 @@ const List = () => {
       </div>
       <FilterBox />
       <div style={{ position: 'relative' }}>
-        <div className={"map-toggle is-open " + isOpenClass} onClick={toggleMap}>Show Map {isOpenClass}</div>
-        <Map variant={isOpenClass} />
+        <div className={"map-toggle  " + openClass} onClick={toggleMap}>
+           { isMapOpen ? 'Hide Map' : 'Show Map' }
+        </div>
+        <Map variant={openClass} />
         <div className="container">
           <div className="row">
             <div className="col-12">

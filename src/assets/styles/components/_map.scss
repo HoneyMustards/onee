@@ -1,0 +1,12 @@
+.map {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 824px;;
+
+    &.is-open {
+        width: 500px;
+        z-index: 3;
+    }
+}

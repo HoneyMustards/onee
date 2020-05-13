@@ -4,6 +4,31 @@
     background-color: #ffffff;
     border: none;
 
+    &-in-map {
+        width:  214px;
+
+        .slider-image {
+            height: 112px;
+        }
+
+        .card-body {
+            padding: 8px;
+        }
+
+        .badge-radius,
+        .card-item-favourite {
+            display: none;
+        }
+    }
+
+    &.card-item-in-map {
+        .swiper-button-prev,
+        .swiper-button-next {
+            width: 19px;
+            height: 24px;
+        }
+    }
+
     .swiper-container {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;

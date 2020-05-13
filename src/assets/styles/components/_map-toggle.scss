@@ -14,5 +14,9 @@
         color: $color-text;
         line-height: 44px;
         cursor: pointer;
+
+        &.is-open {
+            right: 500px;
+        }        
     }
 }

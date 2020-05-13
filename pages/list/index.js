@@ -8,11 +8,27 @@ import Newsletter from '../../src/components/partials/home/newsletter';
 import Footer from '../../src/components/shared/footer/footer';
 
 import CardItem from '../../src/components/elements/card-item';
+import Map from '../../src/components/elements/map';
 
 import globalStyles from './style'
 
 
 const List = () => {
+
+  let isOpenClass = '';
+  const [isMapOpen, setIsMapOpen] = useState(false);
+
+  const toggleMap = () => setIsMapOpen(!isMapOpen);
+
+  useEffect(() => {
+    console.log('ss');
+    if (isMapOpen) {
+      isOpenClass = 'is-open'
+    } else {
+      isOpenClass = ''
+    }
+    console.log(isOpenClass);
+  }, [isMapOpen])
 
   return (
     <Layout>
@@ -21,7 +37,8 @@ const List = () => {
       </div>
       <FilterBox />
       <div style={{ position: 'relative' }}>
-        <div className="map-toggle">Show Map</div>
+        <div className={"map-toggle is-open " + isOpenClass} onClick={toggleMap}>Show Map {isOpenClass}</div>
+        <Map variant={isOpenClass} />
         <div className="container">
           <div className="row">
             <div className="col-12">
@@ -30,16 +47,16 @@ const List = () => {
           </div>
           <div className="row">
             <div className="col-4 mt-3 mb-3">
-              <CardItem />
+              <CardItem isBadge={true} />
             </div>
             <div className="col-4 mt-3 mb-3">
-              <CardItem />
+              <CardItem isBadge={true} />
             </div>
             <div className="col-4 mt-3 mb-3">
-              <CardItem />
+              <CardItem isBadge={true} />
             </div>
             <div className="col-4 mt-3 mb-3">
-              <CardItem />
+              <CardItem isBadge={true} />
             </div>
           </div>
         </div>

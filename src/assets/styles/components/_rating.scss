@@ -1,0 +1,28 @@
+.rating {
+    display: flex;
+
+    &-icon {
+        margin: 0 4px;
+        color: #d0d1d5;
+        font-size: 16px;
+        
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }    
+        
+        &.filled {
+            color: #f0d355;
+        }
+    }
+
+    &-count {
+        color: #9b9b9b;
+        font-size: 14px;
+        font-weight: normal;
+        margin-left: 8px;
+    }
+}

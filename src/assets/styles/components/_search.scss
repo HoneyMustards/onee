@@ -30,6 +30,7 @@
         & > li {
             width: 50%;
             float: left;
+            position: relative;
 
             &:first-child {
                 
@@ -124,6 +125,7 @@
 
             &:before {
                 position: absolute;
+                left: 0;
                 content: '';
                 display: inline-block;
                 margin-top: 10px;
@@ -142,6 +144,12 @@
                     display: none;
                 }
             }
+            
+            &.d-none {
+                &:before {
+                    display: none;
+                }
+            }
         }
 
         &-container {
@@ -155,7 +163,7 @@
 
             &.detail {
                 margin: 0;
-                background: #000;
+                background: #070526;
 
                 .search-box {
                     background: transparent;
@@ -186,5 +194,26 @@
                 }
             }
         }
+
+        &__date-picker-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            padding-left: 16px;
+        }
+
+        &__save-as-favourite {
+            display: flex;
+            align-items: center;
+            color: $color-link;
+            font-size: 14px;
+
+            .icon {
+                padding: 0 8px 0 16px;
+            }
+        }
+
+
     }
 }

@@ -1,0 +1,19 @@
+.badge-radius {
+    background-color: $color-secondary;
+    color: #fff;
+    height: 48px;
+    padding: 0 24px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+
+    &-summary {
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+    &-summary-campaign {
+        font-size: 16px;
+        text-decoration: line-through;
+    }
+}

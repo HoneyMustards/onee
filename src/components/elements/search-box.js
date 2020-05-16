@@ -1,6 +1,6 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import Popover from 'react-bootstrap/Popover';
-import Overlay from 'react-bootstrap/Overlay'
+import Overlay from 'react-bootstrap/Overlay';
 
 import 'react-dates/initialize';
 
@@ -8,7 +8,7 @@ import VisitorCounter from "./visitor-counter";
 import Checkbox from "./form/checkbox";
 import DatePicker from "./datepicker";
 
-const SearchBox = () => {
+const SearchBox = (props) => {
     const [show, setShow] = useState(false);
     const [target, setTarget] = useState(null);
     const ref = useRef(null);
@@ -16,6 +16,8 @@ const SearchBox = () => {
     const [adult, setAdult] = useState(2);
     const [child, setChild] = useState(0);
     const [pet, setPet] = useState(0);
+    const [hasAddFavourite, setHasAddFavourite] = useState(props.hasAddFavourite);
+
 
     const handleClick = (event) => {
         setShow(!show);
@@ -26,6 +28,7 @@ const SearchBox = () => {
         setShow(false);
     }
 
+
     return(
         <ul className="search-box">
             <li className="search-input">
@@ -33,13 +36,22 @@ const SearchBox = () => {
                 <input type="text" placeholder="Where do you want to go?" className="input-group input-group-lg"/>
             </li>
             <li>
-                <DatePicker date="2020-04-26" onChange={e => console.log(e.target.value)} />
+               <div className="search-box__date-picker-wrapper">
+                    <i className="icon icon-pin icon-1-5"></i>
+                    <DatePicker date="2020-04-26" onChange={e => console.log(e.target.value)} />
+               </div>
             </li>
             <li>
                 <a onClick={handleClick} className="search-item"><i className="icon icon-guests icon-1-5 mr-10"></i> Guests</a>
             </li>
             <li className="search-button">
                 <button className="btn btn-secondary p-0 text-center"><i className="icon icon-search icon-1-5 mr-10"></i> Search</button>
+            </li>
+            <li  className={"search-box__save-as-favourite " +  (props.hasAddFavourite ? '' : 'd-none')}>
+                <div>
+                    <i className="icon icon-pin icon-1-5"></i>
+                    Save as favourite search
+                </div>
             </li>
 
             <Overlay

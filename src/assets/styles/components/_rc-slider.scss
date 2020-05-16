@@ -1,0 +1,29 @@
+.rc-slider-handle {
+    width: 32px;
+    height: 32px;
+    background-color: $color-secondary;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+    &:hover,
+    &:focus {
+        border-color: #fff;
+    }
+
+    &.rc-slider-handle-dragging {
+        &:hover,
+        &:focus {
+            border-color: #fff;
+            box-shadow: 0 0 0 red;
+        }
+    }
+}
+
+.rc-slider-track {
+    background-color: #d0d1d5;
+}
+
+.rc-slider-rail,
+.rc-slider-track {
+    top: 14px;
+}

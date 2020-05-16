@@ -201,6 +201,10 @@
             justify-content: space-around;
             width: 100%;
             padding-left: 16px;
+
+            @include media-breakpoint-down(md){
+                padding-left: 0;
+            }            
         }
 
         &__save-as-favourite {
@@ -211,6 +215,11 @@
 
             .icon {
                 padding: 0 8px 0 16px;
+
+                @include media-breakpoint-down(md){
+                    padding-left: 0;
+                    margin-bottom: 8px;
+                }                
             }
         }
 

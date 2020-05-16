@@ -22,4 +22,15 @@ export default css.global`
         color: #ef5729;
         text-decoration: underline;
     }
+
+    .filter-overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: rgba(255, 255, 255, .85);
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        transition: ease-in .2s all;
+    }
 `

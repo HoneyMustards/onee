@@ -9,5 +9,9 @@
         width: 500px;
         z-index: 3;
         transition:  ease-in .2s all;
+
+        @include media-breakpoint-down(md){
+            width: 100%;
+        }        
     }
 }

@@ -37,13 +37,13 @@ const CardItem = (props) => {
                 <Card.Title>Card Title</Card.Title>
                 <div className="container">
                     <div className="row d-flex justify-content-between align-items-center">
-                        <div className="col-6 p-0">
+                        <div className="col-5 p-0">
                             <Card.Subtitle className="mb-2 text-muted">Flo Rida, USA</Card.Subtitle>
                             <Rating point={3.5} count="124" />
                         </div>
-                        <div className="col-6 p-0 text-right">
+                        <div className="col-7 p-0 text-right">
                             <Card.Subtitle className="mb-2 text-info">%8 reseller margin</Card.Subtitle>
-                            <div className="d-flex align-items-center">
+                            <div className="d-flex align-items-center justify-content-end">
                                 <div className="badge-radius badge-radius--promotion mr-2">
                                     PROMOTION PROPERTY
                                 </div>

@@ -8,7 +8,7 @@ export default (state = countInitialState, action) => {
   switch (action.type) {
     case countActionTypes.ADD:
       return Object.assign({}, state, {
-        count: state.count + 1,
+        count: action.count,
       })
     default:
       return state

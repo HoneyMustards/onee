@@ -9,7 +9,7 @@ import filterData from '../../../data/filter'
 import ModalFilterBody from './filter-box/modal-filter-body';
 
 
-const FilterBox = () => {
+const FilterBox = (props) => {
 
     const [beds, setBeds] = useState(2);
     const [bedrooms, setBedrooms] = useState(1);
@@ -27,7 +27,7 @@ const FilterBox = () => {
     const refPriceMax = useRef();
 
 
-    const handleToggle = (popover) => {
+    const handleShow = (popover) => {
         switch (popover) {
             case 'price':
                 setShowPricePopover(!showPricePopover);
@@ -48,14 +48,32 @@ const FilterBox = () => {
             default:
                 break
         }
+        props.handleShowFilter();
     };
 
-    const handleHidePrice = () => setShowPricePopover(false);
-    const handleHideBedroom = () => setShowBedroomsPopover(false);
-    const handleHideInstantBooking = () => setShowInstantBookingPopover(false);
-    const handleHideSort = () => setShowSortPopover(false);
-    const handleHideFilter = () => setShowFilterModal(false);
+    const handleClose = (popover) => {
+        switch (popover) {
+            case 'price':
+                setShowPricePopover(false);
+                break;
+            case 'bedrooms':
+                setShowBedroomsPopover(false);
+                break;
+            case 'instantBooking':
+                setShowInstantBookingPopover(false);
+                break;
+            case 'sort':
+                setShowSortPopover(false);
+                break;
+            default:
+                break
+        }
+        props.handleHideFilter();
+    };    
 
+    
+
+    const handleHideFilter = () => setShowFilterModal(false);
     const handleChangePrice = (value) => setPrices([...value]);
 
 
@@ -67,20 +85,20 @@ const FilterBox = () => {
     }, [prices])
 
     return (
-        <div className="filter-box">
+        <div className={"filter-box " +  props.variant}>
             <div className="filter-box-container">
                 <div>
-                    <a onClick={() => { handleToggle('price') }} className={"filter-box__copy " + (showPricePopover ? 'active' : '')}>
+                    <a onClick={() => { handleShow('price') }} className={"filter-box__copy " + (showPricePopover ? 'active' : '')}>
                         Price
                     </a>
                 </div>
                 <div>
-                    <a onClick={() => { handleToggle('bedrooms') }} className={"filter-box__copy " + (showBedroomsPopover ? 'active' : '')}>
+                    <a onClick={() => { handleShow('bedrooms') }} className={"filter-box__copy " + (showBedroomsPopover ? 'active' : '')}>
                         Bedrooms
                     </a>
                 </div>
                 <div>
-                    <a onClick={() => { handleToggle('instantBooking') }} className={"filter-box__copy " + (showBedroomsPopover ? 'active' : '')}>
+                    <a onClick={() => { handleShow('instantBooking') }} className={"filter-box__copy " + (showBedroomsPopover ? 'active' : '')}>
                         Instant Booking
                     </a>
                 </div>
@@ -90,7 +108,7 @@ const FilterBox = () => {
                 </div>
 
                 <div>
-                    <button onClick={() => { handleToggle('sort') }} className="filter-box__button btn btn-secondary text-center"><i className="icon icon-search  mr-2"></i> Sort</button>
+                    <button onClick={() => { handleShow('sort') }} className="filter-box__button btn btn-secondary text-center"><i className="icon icon-search  mr-2"></i> Sort</button>
                 </div>
 
                 <div className="filter-box__clear">
@@ -104,7 +122,7 @@ const FilterBox = () => {
                 show={showPricePopover}
                 target={target}
                 placement="bottom"
-                rootClose={true} onHide={handleHidePrice}>
+                rootClose={true} onHide={() => { handleClose('price')} }>
                 <Popover id="popover-contained" bsPrefix="popover visitor">
                     <Popover.Content className="visitor-counter">
                         <OverlayPrice prices={prices} refPriceMin={refPriceMin} refPriceMax={refPriceMax} handleChangePrice={handleChangePrice} />
@@ -118,7 +136,7 @@ const FilterBox = () => {
                 show={showBedroomsPopover}
                 target={target}
                 placement="bottom"
-                rootClose={true} onHide={handleHideBedroom}>
+                rootClose={true} onHide={ () => { handleClose('bedrooms') } }>
                 <Popover id="popover-contained" bsPrefix="popover visitor">
                     <Popover.Content className="visitor-counter">
                         <div className="visitor-line">
@@ -143,7 +161,7 @@ const FilterBox = () => {
                 show={showInstantBookingPopover}
                 target={target}
                 placement="bottom"
-                rootClose={true} onHide={handleHideInstantBooking}>
+                rootClose={true} onHide={() => { handleClose('instantBooking') } }>
                 <Popover id="popover-contained" bsPrefix="popover visitor">
                     <Popover.Content className="visitor-counter">
                         <div className="popover__line">
@@ -152,10 +170,10 @@ const FilterBox = () => {
                             </p>
                         </div>
                         <div className="popover__line">
-                            <Checkbox>Instant Book</Checkbox>
+                            <Checkbox onChange={props.handleInstantBooking}>Instant Book</Checkbox>
                         </div>
                         <div className="popover__line">
-                            <button className="btn btn-secondary btn-block">Apply</button>
+                            <button  onClick={props.handleInstantBooking} className="btn btn-secondary btn-block">Apply</button>
                         </div>
                     </Popover.Content>
                 </Popover>
@@ -167,7 +185,7 @@ const FilterBox = () => {
                 show={showSortPopover}
                 target={target}
                 placement="bottom"
-                rootClose={true} onHide={handleHideSort}>
+                rootClose={true} onHide={ () => { handleClose('sort') } } >
                 <Popover id="popover-contained" bsPrefix="popover visitor">
                     <Popover.Content className="visitor-counter">
                         <div className="visitor-line">

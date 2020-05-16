@@ -1,0 +1,1 @@
+export const SET_INSTANT_BOOKING = 'set-instant-booking';

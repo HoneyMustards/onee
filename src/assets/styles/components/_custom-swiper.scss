@@ -1,0 +1,39 @@
+.swiper-button {
+
+    &-prev,
+    &-next {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        background: #fff;
+        border-radius: 60px;
+        box-shadow: 0 0 20px 0 rgba(0,0,0,.1);
+
+        &:after {
+            content: iconfont-item('icon-down');
+            font-family: onee;
+            font-size: 10px;
+        }
+    }
+
+    &-prev {
+        content: iconfont-item('icon-down');
+        left: 0;
+        transform: translateX(-50%);
+
+        &:after {
+            transform: rotate(90deg);
+        }
+    }
+
+    &-next {
+        right: 0;
+        transform: translateX(50%);
+
+        &:after {
+            transform: rotate(-90deg);
+        }
+    }
+}

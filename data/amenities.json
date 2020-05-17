@@ -1,0 +1,34 @@
+[
+    {
+        "icon": "icon-bedroom",
+        "name": "6 Bedroom"
+    },
+    {
+        "icon": "icon-people",
+        "name": "12 People"
+    },
+    {
+        "icon": "icon-bathroom",
+        "name": "6 Bathroom"
+    },
+    {
+        "icon": "icon-night",
+        "name": "Min. Stay: 2–7 nights"
+    },
+    {
+        "icon": "icon-wifi",
+        "name": "Internet"
+    },
+    {
+        "icon": "icon-tv",
+        "name": "Television"
+    },
+    {
+        "icon": "icon-pool",
+        "name": "Pool"
+    },
+    {
+        "icon": "icon-camera",
+        "name": "Min. Stay: 2–7 nights"
+    }
+]

@@ -1,19 +1,28 @@
 $__iconfont__data: map-merge(if(global_variable_exists('__iconfont__data'), $__iconfont__data, ()), (
 	"onee": (
-		"icon-calendar": "\ea01",
-		"icon-check": "\ea02",
-		"icon-close": "\ea03",
-		"icon-down": "\ea04",
-		"icon-facebook": "\ea05",
-		"icon-guests": "\ea06",
-		"icon-instagram": "\ea07",
-		"icon-linkedin": "\ea08",
-		"icon-menu": "\ea09",
-		"icon-messenger": "\ea0a",
-		"icon-pin": "\ea0b",
-		"icon-search": "\ea0c",
-		"icon-twitter": "\ea0d",
-		"icon-youtube": "\ea0e"
+		"icon-bathroom": "\ea01",
+		"icon-bedroom": "\ea02",
+		"icon-calendar": "\ea03",
+		"icon-camera": "\ea04",
+		"icon-check": "\ea05",
+		"icon-close": "\ea06",
+		"icon-down": "\ea07",
+		"icon-facebook": "\ea08",
+		"icon-guests": "\ea09",
+		"icon-instagram": "\ea0a",
+		"icon-linkedin": "\ea0b",
+		"icon-menu": "\ea0c",
+		"icon-messenger": "\ea0d",
+		"icon-night": "\ea0e",
+		"icon-people": "\ea0f",
+		"icon-pin": "\ea10",
+		"icon-pool": "\ea11",
+		"icon-search": "\ea12",
+		"icon-tv": "\ea13",
+		"icon-twitter": "\ea14",
+		"icon-wifi": "\ea15",
+		"icon-youtube": "\ea16",
+		"star": "\ea17"
 	)
 ));
 

@@ -1,0 +1,50 @@
+
+.box {
+    display: flex;
+    align-items: center;    
+
+    &:last-child {
+        border: none;
+    }
+}
+
+.divider {
+    height: 100px;
+    width: 1px;
+    background-color: #d0d1d5;
+}
+
+.icon {
+    font-size: 48px;
+    color: #9b9b9b;
+}
+
+.count {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    color: #4a4a4a;
+}
+
+.more {
+    margin-left: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ef5729;
+
+    &:hover {
+        color: #ef5729;
+    }
+}
+
+.summary {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4a4a4a;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 500;
+}

@@ -10,11 +10,11 @@ const Rating = (props) => {
     let emptyTemplate = [];
 
     for (var i = 0; i < average; i++) {
-        filledTemplate.push(<i className="rating-icon filled icon icon-pin" key={i}/>);
+        filledTemplate.push(<i className="rating-icon filled icon star" key={i}/>);
     }
 
     for (var i = 0; i < emptyCount; i++) {
-        emptyTemplate.push(<i className="rating-icon icon icon-pin" key={i}/>);
+        emptyTemplate.push(<i className="rating-icon icon star" key={i}/>);
     }
 
     return (

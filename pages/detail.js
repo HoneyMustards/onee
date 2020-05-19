@@ -15,8 +15,16 @@ import Rating from '../src/components/elements/rating';
 import Amenities from '../src/components/elements/amenities';
 import Nearby from '../src/components/elements/nearby';
 import Comments from '../src/components/elements/comments';
+import Map from '../src/components/elements/map';
+import PropertySlider from '../src/components/elements/property-slider';
+import DetailPhotos from '../src/components/partials/detail/photos';
+import DetailSummary from '../src/components/partials/detail/detail-summary';
+import DetailBanner from '../src/components/partials/detail/detail-banner';
+import Gallery from '../src/components/partials/detail/gallery';
 
 const Detail = () => {
+
+    const [gallery, setGallery] = useState(false);
   
     return (
       <Layout>
@@ -26,10 +34,9 @@ const Detail = () => {
           
           <div className="detail-page">
             <div className="row">
-                <div className="col-9">
-                    <div className="detail-banner">
-                        <img src="./images/detail/detail.png" alt=""/>
-                    </div>
+                <div className="col-md-12 col-lg-8 detail-container">
+                    <div className="" onClick={() => setGallery(true)}>Gallery</div>
+                    <DetailBanner />
                     <div className="detail-content">
                         <div className="detail-content-top">
                             <div className="detail-content-header">
@@ -59,11 +66,24 @@ const Detail = () => {
                         <hr/>
                         <Nearby list={nearbyList} />
 
+                        <div className="detail-map">
+                            <Map className='detail-type is-open' />
+                        </div>
                     </div>
+
+                    <PropertySlider properties={comments} className="mt-50" />
+
+                    <PropertySlider properties={comments} className="mt-50" />
+
                 </div>
-                <div className="col-3"></div>
+                <div className="col-md-12 col-lg-4 detail-sidebar">
+                    <DetailPhotos />
+                    <DetailSummary />
+                </div>
             </div>
           </div>
+
+          <Gallery show={gallery} />
 
           <Newsletter />
           <Footer />

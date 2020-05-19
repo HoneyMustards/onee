@@ -129,6 +129,8 @@ fieldset:disabled a.btn {
 
 .btn-lg {
   @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+  height: 55px;
+  font-weight: 600;
 }
 
 .btn-sm {

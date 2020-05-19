@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="24px" viewBox="0 0 27 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Onee-Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="06---Property-Detail" transform="translate(-424.000000, -2923.000000)" fill="#DBDBDB" fill-rule="nonzero">
+            <g id="Group-11" transform="translate(6.000000, 2459.000000)">
+                <g id="Results" transform="translate(24.000000, 106.000000)">
+                    <g id="Group-12">
+                        <path d="M406.965219,362.239652 C408.018088,359.744174 410.423305,358.000522 413.220871,358.000522 C416.989392,358.000522 419.703479,361.224348 420.044697,365.066435 C420.044697,365.066435 420.228871,366.020174 419.823479,367.737217 C419.271479,370.075652 417.973914,372.153217 416.224523,373.738783 L406.965219,382 L397.861914,373.738261 C396.112523,372.153217 394.814958,370.07513 394.262958,367.736696 C393.857566,366.019652 394.04174,365.065913 394.04174,365.065913 C394.382958,361.223826 397.097045,358 400.865566,358 C403.663653,358 405.912349,359.744174 406.965219,362.239652 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -11,6 +11,7 @@ const Nearby = (props) => {
 
     return(
         <div className="nearby">
+            <h2 className="detail-content-title">What's Nearby</h2>
             <ul className="nearby-list">
                 {nearbyList}
             </ul>

@@ -101,14 +101,26 @@
 .mr-10 {
     margin-right: 10px;
 }
+.ml-5 {
+    margin-left: 5px;
+}
+.ml-10 {
+    margin-left: 10px;
+}
 .mb-30 {
     margin-bottom: 30px;
 }
 .mt-10 {
     margin-top: 10px;
 }
+.mt-20 {
+    margin-top: 20px;
+}
 .mt-30 {
     margin-top: 30px;
+}
+.mt-50 {
+    margin-top: 50px;
 }
 
 .align-center {
@@ -122,6 +134,16 @@
 
 .p-static {
     position: static;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+img {
+    max-width: 100%;
 }
 
 // COLORS

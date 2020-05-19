@@ -5,7 +5,7 @@ import CardItem from './card-item';
 
 const Map = (props) => {
     return (
-        <div className={"map " + props.variant}>
+        <div className={`map ${props.className}`}>
             <GoogleMapReact
                 bootstrapURLKeys={{ key: 'AIzaSyB0ibrp-9Z8kOifA9qc9HQ8vgPmhsAZK9E' }}
                 defaultCenter={{

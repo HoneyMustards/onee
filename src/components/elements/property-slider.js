@@ -2,9 +2,9 @@ import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import Swiper from 'react-id-swiper';
 
-import CommentItem from './commentItem';
+import CardItem from './card-item';
 
-const Comments = (props) => {
+const PropertySlider = (props) => {
 
     const params = {
         navigation: {
@@ -25,29 +25,29 @@ const Comments = (props) => {
         }
       }
 
-    const commentAll = props.comments.map((item,i) =>  
-        <CommentItem key={i} {...item} />
-    ); 
+    const propertyAll = props.properties.map((item,i) =>
+        <div className="swiper-slide" key={i}>
+            <CardItem {...item} />
+        </div>
+    );
 
     return(
-        <div className="comments">
-            <h2 className="detail-content-title">Reviews</h2>
-            <div className="amenities-list row">
+        <div className={`property-slider ${props.className}`}>
+            <h2 className="property-slider-title">Recently Viewed</h2>
+            <hr className="section-hr"></hr>
+            <div className="property-slider-list">
                 <Swiper {...params}>
-                    {commentAll}
+                    {propertyAll}
                 </Swiper>
             </div>
-            <div className="comments-total">1–2 of 12</div>
         </div>
     )
 };
 
-Comments.propTypes = {
-    comments: PropTypes.array
+PropertySlider.propTypes = {
 }
 
-Comments.defaultProps = {
-    comments: []
+PropertySlider.defaultProps = {
 } 
 
-export default Comments;
+export default PropertySlider;

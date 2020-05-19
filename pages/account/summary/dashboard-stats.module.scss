@@ -14,8 +14,32 @@
     font-weight: 600;
 }
 
+.valueSmall {
+    margin-bottom: 0;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+
 .summary {
     margin: 0;
     font-size: 14px;
     font-weight: 500;
+}
+
+@mixin graphBox {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+}
+
+.graphBoxPaidOut {
+    @include graphBox;
+    background-color: #8bc43e;
+}
+
+.graphBoxExpected {
+    @include graphBox;
+    background-color: #23a8e0;
 }

@@ -7,12 +7,21 @@
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     background-color: #fff;
 
+    
+    @include media-breakpoint-down(md){
+        overflow: auto;
+    } 
+
     &-link {
         margin: 0 8px;
         padding: 5px 20px;
         color: $color-text;
         font-size: 14px;
         font-weight: 500;
+
+        @include media-breakpoint-down(md){
+            white-space: nowrap;
+        }         
 
         &:hover {
             color: $color-text;

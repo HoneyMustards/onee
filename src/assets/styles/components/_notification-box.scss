@@ -1,0 +1,60 @@
+.notification {
+    &-box {
+
+        .header {
+            height: auto;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #ef5729;
+            
+            .title {
+                font-size: 18px;
+                font-weight: 600;
+            }
+        }
+
+        .body {
+            position: relative;
+            &:after {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 66%;
+                background-color: rgba(#fff, $alpha: 0.8);
+                z-index: 2;
+                content: "" ;
+            }
+
+            .title {
+                font-size: 14px;
+                font-weight: bold;
+                color: $color-text;
+                margin: 0;
+            }
+
+            .summary {
+                font-size: 14px;
+                font-weight: 500;
+                color: $color-text;
+            }            
+        }
+
+        .more {
+            margin-top: 8px;
+            margin-bottom: 0;
+            color: $color-secondary;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }        
+    }
+
+    &-item {
+        padding: 8px 0;
+        height: 92px;
+        border-bottom: 1px solid #e3e3e3;        
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

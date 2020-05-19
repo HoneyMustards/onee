@@ -1,0 +1,31 @@
+
+.customer-search {
+    &-box {
+        .more {
+            margin-top: 6px;
+            margin-bottom: 0;
+            color: $color-secondary;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }        
+        
+        .input-group {
+            height: 52px;
+
+            input {
+                height: 52px;
+                background-color: #fff;
+            }
+        }
+
+        .footer {
+            padding: 0;
+        }
+
+        input {
+            height: 52px;
+            background-color: #fff;
+        }
+    }
+}

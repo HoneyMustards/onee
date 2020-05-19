@@ -1,0 +1,66 @@
+.activity {
+    &-box {
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: auto;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #ef5729;
+            
+            .title {
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            .time {
+                font-size: 14px;
+            }
+        }
+
+        .body {
+            .title {
+                font-size: 16px;
+                font-weight: bold;
+                color: $color-text;
+                margin: 0;
+            }
+
+            .table-summary {
+                margin-top: 8px;
+                font-size: 14px;
+                color: $color-text;
+
+                th {                
+                    font-weight: 600;
+                }
+
+                th,
+                td {
+                    border-collapse: collapse;
+                    padding-right: 4px;
+
+                    &:last-child {
+                        padding-right: 0;
+                    }
+                }
+            }            
+        }
+
+        .more {
+            margin-top: 8px;
+            margin-bottom: 0;
+            color: $color-secondary;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }        
+    }
+
+    &-item {
+        padding: 16px 0;
+        border-bottom: 1px solid #e3e3e3;        
+    }
+}

@@ -6,6 +6,10 @@ import DashboardNotifaciton from './dashboard-notification';
 import DashboardFrequency from './dashboard-frequency';
 import DashboardStats from './dashboard-stats';
 import DashboardGraphic from './dashboard-graphic';
+import NotificationBox from '../../../src/components/elements/notification-box';
+import ActivityBox from '../../../src/components/elements/activity-box';
+import SavedBox from '../../../src/components/elements/saved-box';
+import CustomerSearchBox from  "../../../src/components/elements/customer-search-box";
 
 const Summary = () => {
     return (
@@ -24,7 +28,13 @@ const Summary = () => {
                         <DashboardGraphic />
                     </div>
                     <div className="col-md-4">
-                        <div className="box"></div>
+                        <CustomerSearchBox />
+                        <br />
+                        <NotificationBox />
+                        <br />
+                        <ActivityBox />
+                        <br />
+                        <SavedBox />
                     </div>
                 </div>
             </div>

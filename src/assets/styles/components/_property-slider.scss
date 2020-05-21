@@ -7,7 +7,42 @@
         text-align: center;
     }
 
+    &-summary {
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+    &-navigation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            position: relative;
+            left: auto;
+            right: auto;
+            transform: none;
+            margin: 0;
+            background: transparent;
+            box-shadow: none;
+
+            &:focus,
+            &:active {
+                outline: none;
+            }
+        }
+    }
+
+    &-list {
+        .swiper-button-next,
+        .swiper-button-prev {
+            display: none;
+        }
+    }
+
     .section-hr {
-        margin-bottom: 45px;
+        // margin-bottom: 45px;
     }
 }

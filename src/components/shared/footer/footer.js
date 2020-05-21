@@ -6,7 +6,7 @@ import LanguageDropdown from '../../elements/languageDropdown';
 
 import localNumbers from '../../../../data/local-numbers.json';
 
-const Footer = () => {
+const Footer = (props) => {
 
     const [accordion, setAccordion] = useState();
 
@@ -19,7 +19,7 @@ const Footer = () => {
     );
 
     return(
-        <section className="footer">
+        <section className={"footer " + props.variant}>
             <div className="footer-top">
                 <Accordion className="row">
                     <div className="col-sm-12 col-md">

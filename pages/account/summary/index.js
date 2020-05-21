@@ -10,6 +10,10 @@ import NotificationBox from '../../../src/components/elements/notification-box';
 import ActivityBox from '../../../src/components/elements/activity-box';
 import SavedBox from '../../../src/components/elements/saved-box';
 import CustomerSearchBox from  "../../../src/components/elements/customer-search-box";
+import PropertySlider from "../../../src/components/elements/property-slider";
+import Footer from '../../../src/components/shared/footer/footer';
+
+import comments from '../../../data/comments.json';
 
 const Summary = () => {
     return (
@@ -38,7 +42,13 @@ const Summary = () => {
                     </div>
                 </div>
             </div>
-            <br /><br /><br /><br /><br /><br />
+            <div className="container  mt-5 mb-5">
+                <div className="row"></div>
+                <div className="col-12">
+                    <PropertySlider properties={comments} slidesPerView={3} title="LATEST SEARCH RESULTS" summary="Book faster and get better recommendations by adding your details." />
+                </div>
+            </div>
+            <Footer variant="is-border" />
         </Layout>
     )
 }

@@ -37,8 +37,8 @@ const PropertySlider = (props) => {
             <p className="property-slider-summary text-center">{props.summary}</p>
             <hr className="section-hr"></hr>
             <div className="property-slider-navigation">
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div className="swiper-button-prev"></div>
+                <div className="swiper-button-next"></div>
             </div>
             <div className="property-slider-list">
                 <Swiper {...params}>

@@ -170,7 +170,7 @@ const FilterBox = (props) => {
                             </p>
                         </div>
                         <div className="popover__line">
-                            <Checkbox onChange={props.handleInstantBooking}>Instant Book</Checkbox>
+                            <Checkbox checked={props.filter.instantBooking} onChange={props.handleInstantBooking}>Instant Book</Checkbox>
                         </div>
                         <div className="popover__line">
                             <button  onClick={props.handleInstantBooking} className="btn btn-secondary btn-block">Apply</button>

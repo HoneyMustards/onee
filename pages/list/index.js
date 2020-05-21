@@ -55,6 +55,7 @@ const List = (props) => {
         handleShowFilter={showFilterOverlay} 
         handleHideFilter={hideFilterOverlay}
         handleInstantBooking={handleInstantBooking}  
+        filter={props.filter}
       />
       <div style={{ position: 'relative' }}>
         <div className={"map-toggle  " + openClass} onClick={toggleMap}>

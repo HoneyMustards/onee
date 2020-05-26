@@ -16,14 +16,14 @@ import Footer from '../../src/components/shared/footer/footer';
 import CardItem from '../../src/components/elements/card-item';
 import Map from '../../src/components/elements/map';
 
-import globalStyles from './style'
-
+import Items from '../../data/items.json'
 
 const List = (props) => {
 
   const [isMapOpen, setIsMapOpen] = useState(false);
   const [isFilterOverlay, setIsFilterOverlay] = useState(false);
   const [openClass, setOpenClass] = useState();
+  const [scrollTop, setScrollTop] = useState(0);
   const toggleMap = () => setIsMapOpen(!isMapOpen);
   const showFilterOverlay = () => setIsFilterOverlay(true);
   const hideFilterOverlay = () => setIsFilterOverlay(false);
@@ -32,11 +32,25 @@ const List = (props) => {
 
   useEffect(() => {
     if (isMapOpen) {
-      setOpenClass('is-open')
+      setOpenClass('is-open list-type')
     } else {
       setOpenClass('')
     }
   }, [isMapOpen])
+
+  window.addEventListener('scroll', () => {
+    if(window.scrollY < 81){
+        setScrollTop(window.scrollY);
+    } else {
+        setScrollTop(80);
+    }
+  })
+
+  const items = Items.map((item,i) => 
+      <div className="item col-md-4 mt-3 mb-3" key={i}>
+          <CardItem {...item} />
+      </div>
+  );
 
   return (
     <Layout>
@@ -45,7 +59,7 @@ const List = (props) => {
           <Button variant="secondary"><i className="icon icon-search  mr-2"></i> Filter</Button>
           <Button variant="secondary"><i className="icon icon-search  mr-2"></i> Sort</Button>
           <Button variant="secondary" onClick={() => { setIsMapOpen(true) }}><i className="icon icon-search  mr-2"></i> Map</Button>
-        </ButtonGroup>         
+        </ButtonGroup>
       </div>
       <div className="search-box-container detail">
         <SearchBox hasAddFavourite={true} />
@@ -57,39 +71,28 @@ const List = (props) => {
         handleInstantBooking={handleInstantBooking}  
         filter={props.filter}
       />
-      <div style={{ position: 'relative' }}>
-        <div className={"map-toggle  " + openClass} onClick={toggleMap}>
-           { isMapOpen ? 'Hide Map' : 'Show Map' }
+      <div className="list-container ">
+        
+        <div className={`filter-overlay ${isFilterOverlay ? '' : 'd-none'}`}></div>
+        <div className={`map-container ${openClass}`} style={{top: 210 - scrollTop}}>
+          <div className={"map-toggle  " + openClass} onClick={toggleMap}>
+            { isMapOpen ? 'Hide Map' : 'Show Map' }
+          </div>
+          <Map />
         </div>
-        <div className={"filter-overlay" + (isFilterOverlay ? '' : 'd-none')}></div>
-        <Map variant={openClass} />
-        <div className="container">
+        <div className={`list-container-items ${isMapOpen ? 'open-map': ''}`}>
           <div className="row">
             <div className="col-12">
-              <p className="mt-5 summmary">20 of the 30 villas are listing. You may also contact us about our Hidden Gems. <span className="summary-contact">Contact with the nearest travel advisor.</span></p>
+              <p className="mt-20 page-info">20 of the 30 villas are listing. You may also contact us about our Hidden Gems. <span className="page-info-contact">Contact with the nearest travel advisor.</span></p>
             </div>
           </div>
           <div className="row">
-            <div className="col-md-4 mt-3 mb-3">
-              <CardItem isBadge={true} />
-            </div>
-            <div className="col-md-4 mt-3 mb-3">
-              <CardItem isBadge={true} />
-            </div>
-            <div className="col-md-4 mt-3 mb-3">
-              <CardItem isBadge={true} />
-            </div>
-            <div className="col-md-4 mt-3 mb-3">
-              <CardItem isBadge={true} />
-            </div>
+            {items}
           </div>
         </div>
       </div>
       <Newsletter />
       <Footer />
-      <style jsx global>
-        {globalStyles}
-      </style>
     </Layout>
   );
 }

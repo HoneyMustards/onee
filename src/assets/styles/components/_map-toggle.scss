@@ -14,6 +14,7 @@
         color: $color-text;
         line-height: 44px;
         cursor: pointer;
+        white-space: nowrap;
         z-index: 3;
 
         @include media-breakpoint-down(md){

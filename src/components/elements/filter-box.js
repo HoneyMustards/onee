@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Checkbox from "./form/checkbox";
+import Button from "./form/button";
 import Popover from 'react-bootstrap/Popover';
 import Overlay from 'react-bootstrap/Overlay';
 import Modal from 'react-bootstrap/Modal';
@@ -104,15 +105,15 @@ const FilterBox = (props) => {
                 </div>
 
                 <div>
-                    <button onClick={() => { setShowFilterModal(true) }} className="filter-box__button btn btn-secondary text-center"><i className="icon icon-search  mr-2"></i> More Filters</button>
+                    <button onClick={() => { setShowFilterModal(true) }} className="filter-box__button btn btn-secondary text-center"><i className="icon icon-filter  mr-2"></i> More Filters</button>
                 </div>
 
                 <div>
-                    <button onClick={() => { handleShow('sort') }} className="filter-box__button btn btn-secondary text-center"><i className="icon icon-search  mr-2"></i> Sort</button>
+                    <button onClick={() => { handleShow('sort') }} className="filter-box__button btn btn-secondary text-center"><i className="icon icon-sort fs-12 mr-2"></i> Sort</button>
                 </div>
 
                 <div className="filter-box__clear">
-                    <p>Clear Filters</p>
+                    <Button className="btn btn-text">Clear Filters</Button>
                 </div>
             </div>
 
@@ -199,7 +200,7 @@ const FilterBox = (props) => {
 
             <Modal show={showFilterModal} onHide={handleHideFilter} size="lg">
                 <Modal.Header closeButton>
-                    <Modal.Title><i className="icon icon-search  mr-2"></i> More Filter</Modal.Title>
+                    <Modal.Title><i className="icon icon-filter  mr-2"></i> More Filter</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <ModalFilterBody list={filterData} />

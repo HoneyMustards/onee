@@ -16,7 +16,7 @@ const Newsletter = () => {
                 </div>
                 <div className="col-md-12 col-lg-6 newsletter-content">
                     <div className="input-group input-group-lg input-group-shadow">
-                        <Input placeholder="E-mail address" />
+                        <input className="form-control" placeholder="E-mail address" />
                         <div className="input-group-append">
                             <Button className="btn-secondary">SUBSCRIBE</Button>
                         </div>

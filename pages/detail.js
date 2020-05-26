@@ -35,7 +35,7 @@ const Detail = () => {
           <div className="detail-page">
             <div className="row">
                 <div className="col-md-12 col-lg-8 detail-container">
-                    <div className="" onClick={() => setGallery(true)}>Gallery</div>
+                    
                     <DetailBanner />
                     <div className="detail-content">
                         <div className="detail-content-top">

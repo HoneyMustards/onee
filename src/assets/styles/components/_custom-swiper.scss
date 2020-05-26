@@ -10,11 +10,17 @@
         background: #fff;
         border-radius: 60px;
         box-shadow: 0 0 20px 0 rgba(0,0,0,.1);
+        outline: none;
+        border: 0;
 
         &:after {
             content: iconfont-item('icon-down');
             font-family: onee;
             font-size: 10px;
+        }
+
+        &.disable {
+            opacity: .3;
         }
     }
 

@@ -6,6 +6,7 @@ import 'react-dates/initialize';
 
 import VisitorCounter from "./visitor-counter";
 import Checkbox from "./form/checkbox";
+import Button from "./form/button";
 import DatePicker from "./datepicker";
 
 const SearchBox = (props) => {
@@ -33,25 +34,28 @@ const SearchBox = (props) => {
         <ul className="search-box">
             <li className="search-input">
                 <i className="icon icon-pin icon-1-5"></i>
+                <label htmlFor="">Where</label>
                 <input type="text" placeholder="Where do you want to go?" className="input-group input-group-lg"/>
             </li>
             <li>
                <div className="search-box__date-picker-wrapper">
-                    <i className="icon icon-pin icon-1-5"></i>
+                    <i className="icon icon-calendar icon-1-5"></i>
+                    <label htmlFor="">When</label>
                     <DatePicker date="2020-04-26" onChange={e => console.log(e.target.value)} />
                </div>
             </li>
-            <li>
+            <li className="guests">
+                <label htmlFor="">Guests</label>
                 <a onClick={handleClick} className="search-item"><i className="icon icon-guests icon-1-5 mr-10"></i> Guests</a>
             </li>
             <li className="search-button">
                 <button className="btn btn-secondary p-0 text-center"><i className="icon icon-search icon-1-5 mr-10"></i> Search</button>
             </li>
             <li  className={"search-box__save-as-favourite " +  (props.hasAddFavourite ? '' : 'd-none')}>
-                <div>
-                    <i className="icon icon-pin icon-1-5"></i>
+                <Button className="btn btn-text">
+                    <i className="icon icon-save-search icon-1-5"></i>
                     Save as favourite search
-                </div>
+                </Button>
             </li>
 
             <Overlay

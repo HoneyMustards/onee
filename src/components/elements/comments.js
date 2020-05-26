@@ -6,13 +6,23 @@ import CommentItem from './commentItem';
 
 const Comments = (props) => {
 
+    const [swiper, setSwiper] = useState(null);
+    const [activeIndex, setActiveIndex] = useState('first');
+
     const params = {
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-        },
         slidesPerView: 2,
         spaceBetween: 10,
+        on: {
+            slideChange: function () {
+                if(this.isBeginning){
+                    setActiveIndex('first')
+                } else if(this.isEnd) {
+                    setActiveIndex('last')
+                } else {
+                    setActiveIndex(this.activeIndex)
+                }
+            },
+        },
         breakpoints: {
           768: {
             slidesPerView: 2,
@@ -23,21 +33,24 @@ const Comments = (props) => {
             spaceBetween: 20
           }
         }
-      }
+    }
 
     const commentAll = props.comments.map((item,i) =>  
         <CommentItem key={i} {...item} />
-    ); 
+    );
 
     return(
+
         <div className="comments">
             <h2 className="detail-content-title">Reviews</h2>
-            <div className="amenities-list row">
-                <Swiper {...params}>
+            <div className="comments-list row">
+                {swiper && <button className={`swiper-button-prev ${activeIndex === 'first' ? 'disable':''}`} onClick={() => swiper.slidePrev()}></button>}
+                {swiper && <button className={`swiper-button-next ${activeIndex === 'last' ? 'disable':''}`} onClick={() => swiper.slideNext()}></button>}
+                <Swiper {...params} getSwiper={setSwiper}>
                     {commentAll}
                 </Swiper>
             </div>
-            <div className="comments-total">1–2 of 12</div>
+            {swiper && <div className="comments-total">{swiper.activeIndex+1}-{swiper.activeIndex+2} of {swiper.params.children.length}</div>}
         </div>
     )
 };

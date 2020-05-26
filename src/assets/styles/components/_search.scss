@@ -80,9 +80,13 @@
             }
 
             &.search-button {
-                width: 27%;
-                border-radius: 0 80px 80px 0;
-                overflow: hidden;
+                display: flex;
+                align-items: center;
+                width: 25%;
+                height: 100%;
+                padding-left: 15px;
+                border-radius: 0;
+                overflow: inherit;
 
                 @include media-breakpoint-down(md){
                     width: 100%;
@@ -90,10 +94,19 @@
                 }
 
                 .btn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 60px;
+
                     @include media-breakpoint-down(md){
                         height: 50px;
                         border-radius: 50px;
                     }
+                }
+
+                .icon {
+                    font-size: 1.2rem !important;
                 }
             }
 
@@ -150,6 +163,14 @@
                     display: none;
                 }
             }
+
+            label {
+                position: absolute;
+                top: 15px;
+                left: 0;
+                margin: 0 0 0 50px;
+                color: #9B9B9B;
+            }
         }
 
         &-container {
@@ -162,10 +183,13 @@
             }
 
             &.detail {
+                position: sticky;
+                top: 0;
                 margin: 0;
                 background: #070526;
 
                 .search-box {
+                    max-width: 1200px;
                     background: transparent;
                     box-shadow: inherit;
 
@@ -176,8 +200,14 @@
                     }
 
                     input {
+                        padding-top: 24px;
+                        padding-bottom: 0;
                         background: transparent;
                         color: #fff;
+                    }
+
+                    .icon {
+                        font-size: 30px;
                     }
 
                     .DateRangePickerInput, .DateInput {
@@ -188,8 +218,42 @@
                         border-radius: 50px;
 
                         .btn {
-                            height: 45px;
+                            height: 40px;
                         }
+                    }
+                }
+
+                .search-box__date-picker-wrapper {
+                    padding-right: 10px;
+
+                    label {
+                        margin-left: 60px;
+                    }
+                }
+
+                .DateRangePickerInput_arrow {
+                    margin-top: 15px;
+                }
+
+                .search-item {
+
+                    &:hover {
+                        background: none;
+                    }
+                }
+
+                .guests {
+
+                    label {
+                        margin-left: 65px;
+                    }
+
+                    .search-item {
+                        padding-top: 22px;
+                    }
+
+                    .icon {
+                        margin-top: -22px;
                     }
                 }
             }
@@ -213,8 +277,16 @@
             color: $color-link;
             font-size: 14px;
 
+            .btn {
+                width: auto;
+                height: 40px;
+                margin-left: 15px;
+                color: #24A8E0;
+            }
+
             .icon {
-                padding: 0 8px 0 16px;
+                margin-right: 5px;
+                font-size: 30px;
 
                 @include media-breakpoint-down(md){
                     padding-left: 0;

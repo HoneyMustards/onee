@@ -1,24 +1,15 @@
-// styles/global.js
-import css from 'styled-jsx/css'
+.list-container {
+    position: relative;
+    margin-bottom: 30px;
+    padding: 0 50px;
 
-export default css.global`
-    .search-box {
-        max-width: 1230px;
-    }
-
-    .search-button {
-        width: 45%;
-        border-radius: 0 80px 80px 0;
-        overflow: hidden;
-    }
-    
-    .summary {
+    .page-info {
         font-size: 14px;
         color: #4a4a4a;
         font-weight: 500;
     }
 
-    .summary-contact {
+    .page-info-contact {
         color: #ef5729;
         text-decoration: underline;
     }
@@ -33,4 +24,17 @@ export default css.global`
         z-index: 3;
         transition: ease-in .2s all;
     }
-`
+
+    &-items {
+
+        &.open-map {
+            padding-right: 500px;
+
+            .item {
+                width: 50% !important;
+                max-width: 50% !important;
+                flex: 0 0 50% !important;
+            }
+        }
+    }
+}

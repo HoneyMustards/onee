@@ -1,18 +1,17 @@
 .rating {
     display: flex;
+    align-items: center;
+    height: 25px;
 
     &-icon {
-        margin: 0 4px;
+        display: inline;
+        margin-right: 5px;
         color: #d0d1d5;
         font-size: 16px;
-        
-        &:first-child {
-            margin-left: 0;
-        }
 
-        &:last-child {
-            margin-right: 0;
-        }    
+        &:before {
+            float: none;
+        }
         
         &.filled {
             color: #f0d355;

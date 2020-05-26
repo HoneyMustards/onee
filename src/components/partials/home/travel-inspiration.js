@@ -35,7 +35,7 @@ const TravelInspiration = () => {
         <div key={i} className="swiper-slide">
             <Destination {...item} />
         </div>
-    );  
+    );
     
     return(
         <section className="row section-home">

@@ -1,8 +1,11 @@
 .filter-box {
+    position: sticky;
+    top: 80px;
     display: flex;
     justify-content: center;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     background-color: #ffffff;
+    z-index: 2;
 
     &-container {
         display: flex;
@@ -12,7 +15,7 @@
         max-width: 960px;
 
         div {
-            margin: 0 25px;
+            margin: 0 10px;
 
 
             &:first-child {
@@ -36,8 +39,12 @@
 
         &:after {
             position: absolute;
+            top: 50%;
             right: 0;
-            content: "˅";
+            font-size: 6px;
+            font-family: onee;
+            transform: translateY(-50%);
+            content: iconfont-item('icon-down');
         }
 
         &.active,
@@ -46,10 +53,6 @@
         &:active,
         &:not([href]):hover {
             color: $color-link;
-
-            &:after {
-                content: "^";
-            }
         }
         
     }
@@ -59,10 +62,8 @@
         height: 34px;
         line-height: 34px;
         background-color: #fff;
-        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
         border: solid 1px #f1561a;
         color: $color-secondary;
-        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
         &.active,
         &:hover,
@@ -91,9 +92,15 @@
             content: "";
         }
 
-        p {
-            margin-bottom: 0;
-            margin-left: 16px;
+        button {
+            margin: 0 0 0 16px;
+            font-size: 14px;
+            color: $color-secondary;
+
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
         }
     }
 }

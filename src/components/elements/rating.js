@@ -19,8 +19,10 @@ const Rating = (props) => {
 
     return (
         <div className="rating">
-            {filledTemplate}
-            {emptyTemplate}
+            <div className="rating-content">
+                {filledTemplate}
+                {emptyTemplate}
+            </div>
             <span className="rating-count">({props.count})</span>
         </div>
     )

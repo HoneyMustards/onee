@@ -1,0 +1,38 @@
+[
+    {
+        "id": "summary",
+        "title": "Summary"
+    },
+    {
+        "id": "booking",
+        "title": "Booking"
+    },
+    {
+        "id": "customers",
+        "title": "Customers"
+    },
+    {
+        "id": "saved-searches",
+        "title": "Saved Searches"
+    },
+    {
+        "id": "promotions",
+        "title": "Promotions"
+    },
+    {
+        "id": "inbox",
+        "title": "Inbox"
+    },
+    {
+        "id": "to-do-list",
+        "title": "To Do List"
+    },
+    {
+        "id": "history",
+        "title": "History"
+    },
+    {
+        "id": "invoice",
+        "title": "Invoice"
+    }
+]

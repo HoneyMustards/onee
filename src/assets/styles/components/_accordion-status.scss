@@ -1,0 +1,103 @@
+.accordion-status {
+    &-values {
+        padding: 0 20px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .text-header {
+        font-size: 14px;
+        font-weight: 500;
+        color: $color-text;
+
+        &.toggle {
+            color: $color-secondary;
+            cursor: pointer;
+        }
+
+        &.active {
+            color: #22a7df;
+        }
+
+        &.approval {
+            color: #8ac439;
+        }
+
+        &.pending {
+            color: #f8001e;
+        }
+
+        & .color-light  {
+            color: #9b9b9b;
+        }
+    }
+
+    .btn-link {
+        &:hover,
+        &:active,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+
+    .body {
+        &-info,
+        &-action,
+        &-summary {
+            font-size: 14px;
+            padding: 20px 0;
+
+            div {
+                padding-right: 16px;
+            }
+        }
+
+        &-info,
+        &-action {
+            border-bottom: 1px solid #d0d1d5;
+        }      
+        
+        &-info {
+            h3 {
+                font-size: 16px;
+                font-weight: 600;
+            }
+            h4 {
+                font-size: 16px;
+            }
+        }
+
+        &-action {
+            display: flex;
+
+            span {
+                color: $color-secondary;
+                margin-right: 50px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .card-header {
+        border-bottom: 1px solid #d0d1d5;
+    }
+
+    .card {
+        padding: 16px 20px 0;
+        border-bottom: 1px solid #d0d1d5;      
+        border-radius: 0;  
+
+        &:first-child {
+            border-top: 1px solid #d0d1d5;
+        }        
+
+        &:nth-child(odd) {
+            background-color: #f2f2f2;
+
+            .card-header {
+                background-color: #f2f2f2;
+            }
+        }
+    }
+}

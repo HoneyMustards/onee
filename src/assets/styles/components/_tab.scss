@@ -1,0 +1,27 @@
+.tab {
+    border-bottom: 1px solid  #d0d1d5;
+
+    .nav-link {
+        border: none;
+        color: $color-text;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 15px 25px;
+
+        &:active,
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .nav-link.active,  .nav-item.show .nav-link {
+        background-color: transparent;
+        color: $color-secondary;
+        border-bottom: 2px solid $color-secondary;
+        outline: none;
+    }
+
+    & ~ .tab-content {
+        padding: 40px 0;
+    }
+}

@@ -1,0 +1,18 @@
+[
+    {
+        "statusType": "approval",
+        "statusTitle": "Approval"
+    },
+    {
+        "statusType": "approval",
+        "statusTitle": "Approval"
+    },
+    {
+        "statusType": "pending",
+        "statusTitle": "Pending"
+    },
+    {
+        "statusType": "active",
+        "statusTitle": "Active"
+    }
+]

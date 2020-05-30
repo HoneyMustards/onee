@@ -1,0 +1,56 @@
+.customer-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    
+    &:not(:last-child) {
+        border-bottom: 1px solid #e3e3e3;
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+
+        .image {
+            margin-right: 16px;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    .image {
+        width: 74px;
+        height: 74px;
+        border-radius: 50%;
+        border: 5px solid #d0d1d5;
+    }
+
+    .name {
+        font-size: 16px;
+        font-weight: bold;
+        color: $color-text;
+    }
+
+
+    .title {
+        font-size: 14px;
+        font-weight: normal;
+        color: $color-text;
+    }    
+
+    .actions {
+        display: flex;
+        align-items: center;
+
+        &-item {
+            margin: 0 8px;
+            color: $color-secondary;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+}

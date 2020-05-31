@@ -20,7 +20,9 @@ const PageMenu = (props) => {
 
     return (
         <ul className="page-menu">
-            {template}           
+            <div style={{width: '100%', textAlign: 'center'}}>
+                {template}  
+            </div>         
         </ul>
     )
 }

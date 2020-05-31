@@ -2,8 +2,11 @@
     &-header {
         padding: 8px 16px;
         background-color: #070526;
-        color: #fff;
-        font-size: 18px;
+        color: #fff;        
         font-weight: 500;
+
+        .h4 {
+            font-size: 18px;
+        }
     }
 }

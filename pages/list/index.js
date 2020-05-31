@@ -78,7 +78,7 @@ const List = (props) => {
         filter={props.filter}
         isFilterModalShow={isFilterModal}
       />
-      <div className="list-container ">
+      <div className="list-container">
         
         <div className={`filter-overlay ${isFilterOverlay ? '' : 'd-none'}`}></div>
         <div className={`map-container ${openClass}`} style={{top: 210 - scrollTop}}>

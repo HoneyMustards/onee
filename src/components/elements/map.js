@@ -1,19 +1,29 @@
 import React, { useState } from 'react';
+import { Popover, OverlayTrigger } from 'react-bootstrap';
 import GoogleMapReact from 'google-map-react';
 import CardItem from './card-item';
 
 import Items from '../../../data/items.json';
 
+const createPopover = (mapItem) => {
+    const popover = (
+        <Popover className="map-popover">
+            <CardItem
+                variant="card-item-in-map"
+                {...mapItem}
+            />
+        </Popover>
+    );
+
+    return popover;
+}
+
 const items = Items.map((item,i) => 
-    <CardItem
-        key={i}
-        variant="card-item-in-map"                    
-        lat={59.955413}
-        lng={30.337844}
-        text="My Marker"
-        {...item}
-    />
+        <OverlayTrigger trigger="click" overlay={createPopover(item)} key={i} lat={Math.random() * 60} lng={Math.random() * 60} >
+            <i className="icon icon-pin" style={{fontSize: '32px', backgroundColor: 'red', color:'white', borderRadius:'50%'}}></i>
+        </OverlayTrigger> 
 );
+
 
 const Map = (props) => {
 
@@ -22,10 +32,10 @@ const Map = (props) => {
             <GoogleMapReact
                 bootstrapURLKeys={{ key: 'AIzaSyB0ibrp-9Z8kOifA9qc9HQ8vgPmhsAZK9E' }}
                 defaultCenter={{
-                    lat: 59.95,
-                    lng: 30.33
+                    lat: 41.010761,
+                    lng: 28.970959
                 }}
-                defaultZoom={8} 
+                defaultZoom={1}
             >
                 {items}
             </GoogleMapReact>

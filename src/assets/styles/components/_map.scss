@@ -1,6 +1,10 @@
 .map {
     display: none;
 
+    &-popover {
+        max-width: 210px;
+    }
+
     &-container {
         position: fixed;
         top: 210px;

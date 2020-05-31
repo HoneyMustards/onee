@@ -3,7 +3,7 @@ import { Range } from 'rc-slider';
 
 const OverlayPrice = (props) => {
     return (
-        <div>
+        <div style={{width: '100%'}}>
             <div className="popover__line">
                 <p className="popover__summary text-center">
                     <strong>Price Per Night</strong>

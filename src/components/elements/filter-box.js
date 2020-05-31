@@ -74,7 +74,7 @@ const FilterBox = (props) => {
 
     
 
-    const handleHideFilter = () => setShowFilterModal(false);
+    const handleHideFilter = () => props.handleHideFilterModal(false);
     const handleChangePrice = (value) => setPrices([...value]);
 
 
@@ -84,6 +84,7 @@ const FilterBox = (props) => {
             refPriceMax.current.value = prices[1];
         }
     }, [prices])
+
 
     return (
         <div className={"filter-box " +  props.variant}>
@@ -105,7 +106,7 @@ const FilterBox = (props) => {
                 </div>
 
                 <div>
-                    <button onClick={() => { setShowFilterModal(true) }} className="filter-box__button btn btn-secondary text-center"><i className="icon icon-filter  mr-2"></i> More Filters</button>
+                    <button onClick={() => { props.handleShowFilterModal(true) }} className="filter-box__button btn btn-secondary text-center"><i className="icon icon-filter  mr-2"></i> More Filters</button>
                 </div>
 
                 <div>
@@ -198,7 +199,7 @@ const FilterBox = (props) => {
             {/* sort popover */}
 
 
-            <Modal show={showFilterModal} onHide={handleHideFilter} size="lg">
+            <Modal show={props.isFilterModalShow} onHide={handleHideFilter} size="lg">
                 <Modal.Header closeButton>
                     <Modal.Title><i className="icon icon-filter  mr-2"></i> More Filter</Modal.Title>
                 </Modal.Header>

@@ -21,6 +21,7 @@ import Items from '../../data/items.json'
 const List = (props) => {
 
   const [isMapOpen, setIsMapOpen] = useState(false);
+  const [isFilterModal, setIsFilterModal] = useState(false);
   const [isFilterOverlay, setIsFilterOverlay] = useState(false);
   const [openClass, setOpenClass] = useState();
   const [scrollTop, setScrollTop] = useState(0);
@@ -29,6 +30,9 @@ const List = (props) => {
   const hideFilterOverlay = () => setIsFilterOverlay(false);
 
   const handleInstantBooking = status => props.dispatch(setInstantBooking(status));
+  const handleShowFilterModal = status => setIsFilterModal(true);
+  const handleHideFilterModal = status => setIsFilterModal(false);
+  
 
   useEffect(() => {
     if (isMapOpen) {
@@ -56,7 +60,7 @@ const List = (props) => {
     <Layout>
       <div className="mobile-filter-toggle">
         <ButtonGroup size="lg">
-          <Button variant="secondary"><i className="icon icon-search  mr-2"></i> Filter</Button>
+          <Button variant="secondary" onClick={() => { setIsFilterModal(true) }}><i className="icon icon-search  mr-2"></i> Filter</Button>
           <Button variant="secondary"><i className="icon icon-search  mr-2"></i> Sort</Button>
           <Button variant="secondary" onClick={() => { setIsMapOpen(true) }}><i className="icon icon-search  mr-2"></i> Map</Button>
         </ButtonGroup>
@@ -69,7 +73,10 @@ const List = (props) => {
         handleShowFilter={showFilterOverlay} 
         handleHideFilter={hideFilterOverlay}
         handleInstantBooking={handleInstantBooking}  
+        handleShowFilterModal={handleShowFilterModal}
+        handleHideFilterModal={handleHideFilterModal}
         filter={props.filter}
+        isFilterModalShow={isFilterModal}
       />
       <div className="list-container ">
         

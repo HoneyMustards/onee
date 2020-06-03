@@ -1,0 +1,120 @@
+@import "../../../../node_modules/react-big-calendar/lib/css/react-big-calendar";
+
+.rbc-off-range-bg {
+    position: relative;
+
+    &:before {
+        position: absolute;
+        top: -50px;
+        left: 65px;
+        width: 1px;
+        height: 200%;
+        transform: rotate(51deg);
+        background-color: #d0d1d5;
+        overflow: hidden;
+        content: "";
+    }
+}
+
+// .rbc-row-bg {
+//     height: 116px;
+// }
+
+.calender-event-image {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    position: absolute;
+    left: -3px;
+    top: -3px
+}
+
+.rbc-date-cell {
+    text-align: left;
+    padding-left: 8px;
+    font-size: 14px;
+}
+
+.rbc-row-segment {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.rbc-header + .rbc-header {
+    border-left: none;
+    text-align: left;
+}
+
+
+.rbc-header {
+    font-size: 14px;
+    font-weight: normal;
+    text-align: left;
+    position: relative;
+}
+
+.rbc-event {
+    border-radius: 16px;
+    background-color: #1da6de;
+    padding: 0 0 0 40px;
+    position: relative;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+}
+
+.rbc-month-view {
+    border-top: none;
+    position: relative;
+
+    
+    &:after,
+    &:before {
+        position: absolute;
+        width: 5px;
+        height: 21px;
+        top: 0;
+        background-color: #fff;
+        content: "";
+    }
+
+    &:before {
+        left: -2px;
+    }
+
+    &:after { 
+        right: -2px;
+    }
+}
+
+.rbc-toolbar {
+    justify-content: flex-end;
+}
+
+.rbc-toolbar button {
+    margin: 0 10px;
+    border-radius: 25px !important;
+    font-size: 14px;
+    border: 1px solid #d0d1d5;
+
+    &:active,
+    &.rbc-active,
+    &:focus,
+    &:hover {
+        background-color: #fff !important;
+        color: $color-secondary;
+        border-color: $color-secondary;   
+        outline: none;
+    }
+}
+
+.rbc-toolbar-label {
+    display: none;
+}
+
+.rbc-btn-group {
+    &:first-child {
+        display: none;
+    }
+}

@@ -1,0 +1,12 @@
+.boxCalendar {
+    padding: 30px 40px;
+    @media screen and (max-width: 768px) {
+        padding: 16px 5px;
+    }
+}
+
+.box {
+    @media screen and (max-width: 768px) {
+        padding: 16px 5px;
+    }
+}

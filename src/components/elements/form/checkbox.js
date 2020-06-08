@@ -27,7 +27,8 @@ Checkbox.defaultProps = {
     type: 'checkbox',
     className: '',
     checked: '',
-    label: ''
+    label: '',
+    onChange: () => {}
 }
 
 export default Checkbox;

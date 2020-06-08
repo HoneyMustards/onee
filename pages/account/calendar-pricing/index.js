@@ -4,11 +4,12 @@ import PageHeader from '../../../src/components/elements/page-header';
 import PageMenu from '../../../src/components/elements/page-menu';
 import Calendar from '../../../src/components/elements/calendar';
 import Footer from '../../../src/components/shared/footer/footer';
-import moment from 'moment';
+import SelectedDates from './selected-dates';
+import ResellerMargin from './reseller-margin';
+import style from './style.module.scss';
 import eventList from '../../../data/calendar.json';
 
 
-console.log();
 
 
 const  eventItem = (props)   => {
@@ -26,16 +27,20 @@ const CalendarPricing = () => {
             <PageMenu active="booking" />
             <div className="container mt-5 mb-5">
                 <div className="row">
-                    <div className="col-8">
-                        <div className="box" style={{ padding: '30px 40px' }}>
+                    <div className="col-md-8">
+                        <div className={"box " + style.boxCalendar}>
                             <Calendar
                                 events= {eventList}
                                 style={{ height: 500 }}
                             />
                         </div>
                     </div>
-                    <div className="col-4">
-                        aaaa
+                    <div className="col-md-4 mt-4 m-md-0">
+                        <SelectedDates />
+
+                        <br />
+
+                        <ResellerMargin />
                     </div>
                 </div>
             </div>

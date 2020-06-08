@@ -17,7 +17,7 @@ function Select(props) {
     }
 
     return (
-        <label className="select" style={{width: props.width}}>
+        <label className={"select " + props.variant} style={{width: props.width}}>
             <select ref={props.referans} defaultValue={props.value}>
                 {options}
             </select>

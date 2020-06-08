@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Input = props => {
     
     return (
-        <div className="form-line">
+        <div className={"form-line " + props.variant}>
             <input type={props.type} placeholder={props.placeholder} name={props.name} className={props.className} />
             <label htmlFor="">{props.label}</label>
         </div>
@@ -16,6 +16,7 @@ Input.propTypes = {
     className: PropTypes.string,
     placeholder: PropTypes.string,
     label: PropTypes.string,
+    variant: PropTypes.string
 }
 
 Input.defaultProps = {

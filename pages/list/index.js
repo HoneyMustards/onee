@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from "react-redux";
-// import { initStore } from '../../store/store';
-import { setInstantBooking } from '../../store/filter/actions';
-// import { UPDATE_FILTER } from '../../store/filter/actions.type';
+import { setInstantBooking, setFilter } from '../../store/filter/actions';
 
 // import { FormattedMessage } from "react-intl";
 
@@ -15,6 +13,8 @@ import Footer from '../../src/components/shared/footer/footer';
 
 import CardItem from '../../src/components/elements/card-item';
 import Map from '../../src/components/elements/map';
+
+import Persist from  '../../src/service/persist.service';
 
 import Items from '../../data/items.json'
 
@@ -29,9 +29,19 @@ const List = (props) => {
   const showFilterOverlay = () => setIsFilterOverlay(true);
   const hideFilterOverlay = () => setIsFilterOverlay(false);
 
-  const handleInstantBooking = status => props.dispatch(setInstantBooking(status));
+  const handleInstantBooking = status => {
+    props.dispatch(setInstantBooking(status));
+    Persist.set(props.filter);  
+  };
   const handleShowFilterModal = status => setIsFilterModal(true);
   const handleHideFilterModal = status => setIsFilterModal(false);
+
+  useEffect(() => {
+    const getState = Persist.get();
+    if (getState != null) {
+      props.dispatch(setFilter(getState));
+    }
+  }, [])
   
 
   useEffect(() => {
@@ -42,13 +52,13 @@ const List = (props) => {
     }
   }, [isMapOpen])
 
-  window.addEventListener('scroll', () => {
-    if(window.scrollY < 81){
-        setScrollTop(window.scrollY);
-    } else {
-        setScrollTop(80);
-    }
-  })
+  // window.addEventListener('scroll', () => {
+  //   if(window.scrollY < 81){
+  //       setScrollTop(window.scrollY);
+  //   } else {
+  //       setScrollTop(80);
+  //   }
+  // })
 
   const items = Items.map((item,i) => 
       <div className="item col-md-4 mt-3 mb-3" key={i}>
@@ -103,8 +113,6 @@ const List = (props) => {
     </Layout>
   );
 }
-
-// List.getInitialProps = ({ store }) => store.dispatch(addCount());
 
 
 const mapStateToProps = (state, props) => {

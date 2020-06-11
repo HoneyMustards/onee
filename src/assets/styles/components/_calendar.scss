@@ -30,7 +30,15 @@
     top: -3px
 }
 
+.calender-event-price {
+    position: absolute;
+    bottom: -24px;
+    right: 8px;
+    color: $color-text;
+}
+
 .rbc-date-cell {
+    position: relative;
     text-align: left;
     padding-left: 8px;
     font-size: 14px;
@@ -55,13 +63,23 @@
 }
 
 .rbc-event {
-    border-radius: 16px;
-    background-color: #1da6de;
-    padding: 0 0 0 40px;
-    position: relative;
-    height: 32px;
-    line-height: 32px;
-    font-size: 14px;
+    background-color: transparent;
+    padding: 0;
+    .reserved {
+        border-radius: 16px;
+        background-color: #1da6de;
+        padding: 0 0 0 40px;
+        position: relative;
+        height: 32px;
+        line-height: 32px;
+        font-size: 14px;
+    }
+
+    .price {
+        position: absolute;
+        width: 100px;
+        height: 50px;;
+    }
 }
 
 .rbc-month-view {
@@ -90,6 +108,7 @@
 
 .rbc-toolbar {
     justify-content: flex-end;
+    margin-bottom: 16px;
 }
 
 .rbc-toolbar button {
@@ -117,4 +136,9 @@
     &:first-child {
         display: none;
     }
+}
+
+.rbc-selected-cell {
+    background-color: #fff;
+    border: 1px solid $color-secondary !important;
 }

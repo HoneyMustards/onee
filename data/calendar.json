@@ -10,5 +10,15 @@
         "start": "Mon Jun 08 2020 01:05:46 GMT+0300 (GMT+03:00)",
         "end": "Wed Jun 10 2020 01:05:46 GMT+0300 (GMT+03:00)",
         "imageUrl":"./profile/avatar.png"
-    }    
+    },
+    { 
+        "start": "Mon Jun 08 2020 01:05:46 GMT+0300 (GMT+03:00)",
+        "end": "Mon Jun 08 2020 01:05:46 GMT+0300 (GMT+03:00))",
+        "price": "400$"
+    },
+    { 
+        "start": "Mon Jun 02 2020 01:05:46 GMT+0300 (GMT+03:00)",
+        "end": "Mon Jun 02 2020 01:05:46 GMT+0300 (GMT+03:00)",
+        "price": "300$"
+    }      
 ]

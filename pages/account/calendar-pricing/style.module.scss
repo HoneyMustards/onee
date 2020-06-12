@@ -1,8 +1,15 @@
 .boxCalendar {
+    position: relative;
     padding: 30px 40px;
     @media screen and (max-width: 768px) {
         padding: 16px 5px;
     }
+}
+
+.select {
+    position: absolute;
+    width: 300px;
+    top: 24px
 }
 
 .box {

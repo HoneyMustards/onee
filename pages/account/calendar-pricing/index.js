@@ -4,11 +4,23 @@ import PageHeader from '../../../src/components/elements/page-header';
 import PageMenu from '../../../src/components/elements/page-menu';
 import Calendar from '../../../src/components/elements/calendar';
 import Footer from '../../../src/components/shared/footer/footer';
+import Select from '../../../src/components/elements/form/select';
 import SelectedDates from './selected-dates';
 import ResellerMargin from './reseller-margin';
 import style from './style.module.scss';
 import eventList from '../../../data/calendar.json';
 
+
+const list1 = [
+    {
+        value: 1,
+        text: 'Villa Rose / ID:8001477'
+    },
+    {
+        value: 2,
+        text: 'Villa Rose / ID:8001477'
+    }
+];
 
 
 
@@ -29,6 +41,7 @@ const CalendarPricing = () => {
                 <div className="row">
                     <div className="col-md-8">
                         <div className={"box " + style.boxCalendar}>
+                            <Select variant={"secondary " + style.select}  options={list1}  />
                             <Calendar
                                 events= {eventList}
                                 style={{ height: 500 }}

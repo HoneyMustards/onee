@@ -7,7 +7,7 @@ const Amenities = (props) => {
         <li key={i} className="col-6 col-md-3 item">
             <i className={`icon ${item.icon}`}></i> {item.name}
         </li>
-    ); 
+    );
 
     return(
         <div className="amenities">

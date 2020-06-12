@@ -1,8 +1,6 @@
 import React, {useState, useRef} from 'react';
 import PropTypes from 'prop-types';
 
-import Input from "./form/input";
-
 const VisitorCounter = ({value}) => {
 
     const [count, setCount] = useState(value);

@@ -1,6 +1,11 @@
 import React, {useState} from 'react';
+import { useAuth0 } from "../../../../../pages/react-auth0-spa";
+
+import Link from '../../../elements/link';
 
 const ProfileMenus = () => {
+
+  const { logout } = useAuth0();
 
   return(
     <ul className="menu-list list">
@@ -13,7 +18,7 @@ const ProfileMenus = () => {
         <li>To Do List</li>
         <li>Edit My Profile</li>
         <li>Help</li>
-        <li>Log Out</li>
+        <li onClick={() => logout()}>Log Out</li>
     </ul>
   )
 };

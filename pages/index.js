@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import { FormattedMessage } from "react-intl";
 
 import Layout from '../src/components/layouts/layout';

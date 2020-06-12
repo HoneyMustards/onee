@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Rating = (props) => {
     
@@ -23,9 +24,19 @@ const Rating = (props) => {
                 {filledTemplate}
                 {emptyTemplate}
             </div>
-            <span className="rating-count">({props.count})</span>
+            {props.count && <span className="rating-count">({props.count})</span>}
         </div>
     )
 }
+
+Rating.propTypes = {
+    point: PropTypes.number,
+    count: PropTypes.number,
+}
+
+Rating.defaultProps = {
+    point: null,
+    count: null
+} 
 
 export default Rating;

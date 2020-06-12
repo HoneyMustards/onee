@@ -41,7 +41,7 @@ const Detail = () => {
                         <div className="detail-content-top">
                             <div className="detail-content-header">
                                 <h1 className="detail-title">Pine Cabin With Great Sea Views In Peaceful Location</h1>
-                                <Rating />
+                                <Rating point={3} />
                             </div>
 
                             <div className="detail-content-info">

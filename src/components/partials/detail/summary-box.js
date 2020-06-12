@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
 
-import Input from '../../elements/form/input';
-
 const SummaryBox = (props) => {
 
     return(

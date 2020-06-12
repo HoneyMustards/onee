@@ -32,6 +32,7 @@
     }
 
     .logo {
+        cursor: pointer;
 
         @include media-breakpoint-down(sm){
             width: 85px;

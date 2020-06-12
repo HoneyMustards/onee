@@ -2,11 +2,12 @@ import React from "react";
 import PropTypes from 'prop-types';
 
 const Input = props => {
-    
+
     return (
-        <div className={"form-line " + props.variant}>
-            <input type={props.type} placeholder={props.placeholder} name={props.name} className={props.className} />
-            <label htmlFor="">{props.label}</label>
+        <div className={`input-box ${props.className}`}>
+            <input type={props.type} placeholder={props.placeholder} name={props.name} id={props.name}
+                   className="form-control" required onChange={props.onChange} onFocus={props.onFocus} value={props.value} />
+            {props.label && <label htmlFor={props.name}>{props.label}</label>}
         </div>
     )
 };
@@ -15,15 +16,18 @@ Input.propTypes = {
     type: PropTypes.string,
     className: PropTypes.string,
     placeholder: PropTypes.string,
+    value: PropTypes.string,
     label: PropTypes.string,
-    variant: PropTypes.string
+    variant: PropTypes.string,
+    onChange: PropTypes.func,
+    onFocus: PropTypes.func
 }
 
 Input.defaultProps = {
     type: 'text',
-    className: 'form-control',
+    className: '',
     placeholder: '',
     label: ''
-} 
+}
 
 export default Input;

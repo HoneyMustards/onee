@@ -1,16 +1,24 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import { FormattedMessage } from "react-intl";
 import Popover from 'react-bootstrap/Popover';
 import Overlay from 'react-bootstrap/Overlay';
 import OverlayTrigger from 'react-bootstrap/Overlay';
+import { connect } from 'react-redux';
+
+// Actions
+import { getCustomers } from '../../../../store/customers/action';
 
 import Submit from '../../elements/form/button';
 import Input from "../../elements/form/input";
 
-const Customer = () => {
+const Customer = (props) => {
     const [show, setShow] = useState(false);
     const [target, setTarget] = useState(null);
     const ref = useRef(null);
+
+    useEffect(() => {
+      show ? props.onGetCustomers() : null;
+    }, [show]);
 
     const handleClick = (event) => {
           setShow(!show);
@@ -38,4 +46,12 @@ const Customer = () => {
     )
 }
 
-export default Customer;
+const mapStateToProps = state => ({
+  customers: state.customers
+});
+
+const mapDispatchToProps = {
+  onGetCustomers: getCustomers
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Customer);

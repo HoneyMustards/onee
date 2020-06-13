@@ -24,9 +24,9 @@ const CardItem = (props) => {
     }
 
     let allImages = null;
-    if(images){
+    if (images){
         allImages = images.map((item,i) => 
-            <div key={i}><img className="slider-image" src={item} /></div>
+            <div key={i}><img className="slider-image" src={item.url} /></div>
         );
     }
 
@@ -43,7 +43,7 @@ const CardItem = (props) => {
                     <div className="row d-flex justify-content-between align-items-center">
                         <div className="col-5 p-0">
                             <Card.Subtitle className="mb-2 text-muted">{location}</Card.Subtitle>
-                            <Rating point={3.5} count="124" />
+                            <Rating point={3.5} count={124} />
                         </div>
                         <div className="col-7 p-0 text-right">
                             <Card.Subtitle className="mb-2 text-info"><span>%8</span> reseller margin</Card.Subtitle>

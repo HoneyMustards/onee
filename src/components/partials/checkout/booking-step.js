@@ -44,7 +44,6 @@ const BookingStep = () => {
                             onSubmit={values =>
                                 setTimeout(() => {
                                     alert(JSON.stringify(values, null, 2));
-                                    console.log(values)
                                 }, 100)
                             }
                             render={({ values, handleChange }) => (

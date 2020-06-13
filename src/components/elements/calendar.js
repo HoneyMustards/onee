@@ -22,7 +22,6 @@ const eventItem = (props) => {
 
 
 const CalenderOnee = (props) => {
-    console.log(props.events);
     return (
         <Calendar
             localizer={localizer}

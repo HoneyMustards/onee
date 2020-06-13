@@ -19,7 +19,7 @@ const createPopover = (mapItem) => {
 }
 
 const items = Items.map((item,i) => 
-        <OverlayTrigger trigger="click" overlay={createPopover(item)} key={i} lat={Math.random() * 60} lng={Math.random() * 60} >
+        <OverlayTrigger trigger="click" overlay={createPopover(item)} key={i} lat={39.925533} lng={32.866287} >
             <i className="icon icon-pin" style={{fontSize: '32px', backgroundColor: 'red', color:'white', borderRadius:'50%'}}></i>
         </OverlayTrigger> 
 );

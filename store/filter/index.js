@@ -19,7 +19,6 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case SET_FILTERS:
-      console.log(action.persistState);
       return Object.assign({}, action.persistState)
     case SET_INSTANT_BOOKING:      
       return Object.assign({}, state, {

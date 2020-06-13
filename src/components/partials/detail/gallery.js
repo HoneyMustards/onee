@@ -6,7 +6,6 @@ import GalleryAll from '../../../../data/gallery.json';
 const Gallery = (props) => {
 
     useEffect(() => {
-        console.log(props)
         if(props.show){
             setShow(props.show);
         }
@@ -22,7 +21,6 @@ const Gallery = (props) => {
         runCallbacksOnInit: true,
         rebuildOnUpdate: true,
         onInit: (swiper) => {
-            console.log('asdasd');
             this.swiper = swiper
         },
         slidesPerView: 1,

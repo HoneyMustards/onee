@@ -5,13 +5,10 @@
     ],
     "plugins": [
       [
-        "module-resolver",
-        {
-          "root": [
-            "./src"
-          ]
-        }
-      ]
+        "module-resolver"
+        
+      ],
+      ["@babel/transform-runtime"]
     ]
   }
   

@@ -12,6 +12,9 @@ import Submit from '../../elements/form/button';
 import Input from "../../elements/form/input";
 
 const Customer = (props) => {
+
+    //console.log(props);
+
     const [show, setShow] = useState(false);
     const [target, setTarget] = useState(null);
     const ref = useRef(null);

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { FormattedMessage } from "react-intl";
-import { useAuth0 } from "../../../../pages/react-auth0-spa";
+import { useAuth0 } from "../../../../react-auth0-spa";
 
 import Link from '../../elements/link';
 import Button from '../../elements/form/button';

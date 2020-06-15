@@ -2,7 +2,7 @@ import React from 'react';
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 import Select from '../../../src/components/elements/form/select';
-import { options } from './graphs-options';
+import { options } from '../../../data/graphs-options';
 import style from './dashboard-stats.module.scss'
 
 const DashboardGraphic = () => {

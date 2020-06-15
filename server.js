@@ -1,26 +1,26 @@
-const express = require("express");
-const next = require("next");
-
-const dev = process.env.NODE_ENV !== "production";
+const express = require('express');
+const next = require('next');
+const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
-const port = process.env.PORT || 5000;
 
-app
-  .prepare()
-  .then(() => {
-    const server = express();
-    
-    server.get("*", (req, res) => {
-      return handle(req, res);
-    });
+app.prepare().then(() => {
+	const server = express();
 
-    server.listen(port, err => {
-      if (err) throw err;
-      console.log(`> Ready on http://localhost:${port}`);
-    });
-  })
-  .catch(ex => {
-    console.error(ex.stack);
-    process.exit(1);
-  });
+	// Custom routes go here
+	server.get('/detail/:name', (req, res) => {
+		const mergedQuery = Object.assign({}, req.query, req.params);
+		return app.render(req, res, '/detail', mergedQuery);
+	});
+
+	// This is the default route, don't edit this.
+	server.get('*', (req, res) => {
+		return handle(req, res);
+	});
+	const port = process.env.PORT || 5000;
+
+	server.listen(port, err => {
+		if (err) throw err;
+		console.log(`> Ready on port ${port}...`);
+	});
+});

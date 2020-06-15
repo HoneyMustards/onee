@@ -1,9 +1,10 @@
 const IconfontPlugin = require('iconfont-plugin-webpack');
+require('dotenv').config();
 
 const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = ({
-    assetPrefix: isProd ? '//onee.com/demo/' : '/',
+    assetPrefix: isProd ? '/' : '/',
     webpack(config, options) {
         config.module.rules.push(
               
@@ -23,5 +24,11 @@ module.exports = ({
               })
         );
         return config;
+    }, 
+    env: {
+        BASE_URL: process.env.BASE_URL,
+        REDIRECT_URL: process.env.REDIRECT_URL,
+        CLIENT_ID: process.env.CLIENT_ID,
+        DOMAIN: process.env.DOMAIN
     }
 })

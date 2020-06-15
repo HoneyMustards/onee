@@ -15,7 +15,7 @@ import AdditionalServicesStep from '../src/components/partials/checkout/services
 import PaymentStep from '../src/components/partials/checkout/payment-step';
 import ComfirmationStep from '../src/components/partials/checkout/comfirmation-step';
 
-const Checkout = () => {
+const Checkout = (props) => {
 
   
     return (

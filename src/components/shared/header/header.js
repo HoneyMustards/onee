@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from "next/link";
-import { useAuth0 } from "../../../../pages/react-auth0-spa";
+import { useAuth0 } from "../../../../react-auth0-spa";
 import { connect } from 'react-redux';
 import { setUser, setToken } from '../../../../store/user/action';
 

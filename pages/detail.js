@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FormattedMessage } from "react-intl";
+import { useRouter } from 'next/router'
 
 //Data
 import amenitiesList from '../data/amenities.json';
@@ -21,8 +22,15 @@ import DetailPhotos from '../src/components/partials/detail/photos';
 import DetailSummary from '../src/components/partials/detail/detail-summary';
 import DetailBanner from '../src/components/partials/detail/detail-banner';
 import Gallery from '../src/components/partials/detail/gallery';
+import { Next } from 'react-bootstrap/PageItem';
 
-const Detail = () => {
+import fetch from 'node-fetch'
+
+const Detail = (props) => {
+
+    const router = useRouter();
+
+    console.log(props);
 
     const [gallery, setGallery] = useState(false);
   
@@ -35,7 +43,6 @@ const Detail = () => {
           <div className="detail-page">
             <div className="row">
                 <div className="col-md-12 col-lg-8 detail-container">
-                    
                     <DetailBanner />
                     <div className="detail-content">
                         <div className="detail-content-top">
@@ -89,6 +96,16 @@ const Detail = () => {
           <Footer />
       </Layout>
     );
+}
+
+export async function getServerSideProps() {
+    console.log('asd');
+    // Fetch data from external API
+    const res = await fetch(`https://api.github.com/repos/vercel/next.js`)
+    const data = await res.json()
+  
+    // Pass data to the page via props
+    return { props: { data } }
 }
 
 export default Detail;

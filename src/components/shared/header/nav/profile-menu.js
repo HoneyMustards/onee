@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { useAuth0 } from "../../../../../pages/react-auth0-spa";
+import { useAuth0 } from "../../../../../react-auth0-spa";
 
 import Link from '../../../elements/link';
 

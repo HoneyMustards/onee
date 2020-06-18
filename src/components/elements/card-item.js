@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Swiper from 'react-id-swiper';
 import Rating from '../../components/elements/rating';
 import Favourite from '../../components/elements/favourite';
+import Link from 'next/link';
 
 const CardItem = (props) => {
 
@@ -33,9 +34,13 @@ const CardItem = (props) => {
     return (
         <Card className={"card-item " + props.variant}>
             <Card.Header>
-                <Swiper {...params}>
-                    {allImages}
-                </Swiper>
+                <Link href="/detail">
+                    <a>
+                        <Swiper {...params}>
+                            {allImages}
+                        </Swiper>
+                    </a>
+                </Link>
             </Card.Header>
             <Card.Body>
                 <Card.Title>{name}</Card.Title>

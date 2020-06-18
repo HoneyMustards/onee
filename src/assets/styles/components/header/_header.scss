@@ -57,6 +57,10 @@
         line-height: 1.5;
         cursor: pointer;
 
+        a {
+            color: #4A4A4A;
+        }
+
         &:first-child {
             padding-top: 0;
         }

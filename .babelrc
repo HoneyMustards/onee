@@ -1,14 +1,13 @@
 {
-    "presets": [
-      "@babel/preset-env",
-      "next/babel"
+  "presets": [
+    "@babel/preset-env",
+    "next/babel"
+  ],
+  "plugins": [
+    [
+      "module-resolver"
+
     ],
-    "plugins": [
-      [
-        "module-resolver"
-        
-      ],
-      ["@babel/transform-runtime"]
-    ]
-  }
-  
+    ["@babel/transform-runtime"]
+  ]
+}

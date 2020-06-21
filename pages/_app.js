@@ -9,27 +9,15 @@ import '../src/assets/styles/_page.scss';
 import { useEffect, useState } from 'react';
 
 
-function MyApp({ Component, pageProps, store, url }) {
-
-  useEffect(() => {
-    
-  })
+function MyApp({ Component, pageProps, store}) {
 
   return (
-    <Auth0Provider domain={process.env.DOMAIN} client_id={process.env.CLIENT_ID} redirect_uri={url}>
+    <Auth0Provider domain={process.env.DOMAIN} client_id={process.env.CLIENT_ID} redirect_uri="http://localhost:5000">
       <Provider store={store}>
         <Component {...pageProps} />
       </Provider>
     </Auth0Provider>
   )
-}
-
-export async function getStaticProps(context) {
-  return {
-    props: {
-      url: window.location.href
-    },
-  }
 }
 
 export default withRedux(initStore)(MyApp);

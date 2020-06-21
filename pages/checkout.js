@@ -24,7 +24,7 @@ const Checkout = (props) => {
           
           <div className="detail-page">
             <div className="row ">    
-                <PaymentStep />
+                <ComfirmationStep />
                 <div className="col-md-12 col-lg-4 checkout-sidebar">
                     <DetailSummary property={true} />
                 </div>

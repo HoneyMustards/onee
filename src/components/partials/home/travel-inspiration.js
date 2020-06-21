@@ -33,7 +33,7 @@ const TravelInspiration = () => {
 
     const destinations = destinationList.map((item,i) => 
         <div key={i} className="swiper-slide">
-          <Link href="/detail?name=ertugrul" as="detail/asdasd">
+          <Link href="/detail">
             <a>
               <Destination {...item} />
             </a>

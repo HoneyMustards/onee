@@ -25,11 +25,13 @@ const Header = (props) => {
     }
   };
 
-  if (loading) {
-    return <div>Loading...</div>;
-  } else {
+  if (!loading) {
     initUser();
   }
+
+  const profile = (
+    user ? <Profile /> : <GuestUser />
+  );
 
   return(
     <header className="header">
@@ -41,7 +43,7 @@ const Header = (props) => {
           <Link href="/"><div className="logo"></div></Link>
         </div>
         <div className="col-4 col-md-9 header-content">
-          { user ? <Profile /> : <GuestUser /> }
+        { loading ? 'Loading...' :  profile }
         </div>
         <Profilemobile />
       </div>

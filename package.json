@@ -7,7 +7,9 @@
     "dev": "next -p 3000",
     "build": "next build",
     "start": "next start -p 3000",
-    "export": "next export"
+    "export": "next export",
+    "dist-dev": "NODE_ENV=development next build",
+    "dist-start": "set NODE_ENV=development && node server.js"
   },
   "repository": {
     "type": "git",

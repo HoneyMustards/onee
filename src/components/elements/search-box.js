@@ -1,6 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react';
 import Popover from 'react-bootstrap/Popover';
 import Overlay from 'react-bootstrap/Overlay';
+import { useRouter } from 'next/router';
 
 import 'react-dates/initialize';
 
@@ -19,6 +20,7 @@ const SearchBox = (props) => {
     const [pet, setPet] = useState(0);
     const [hasAddFavourite, setHasAddFavourite] = useState(props.hasAddFavourite);
 
+    const router = useRouter();
 
     const handleClick = (event) => {
         setShow(!show);
@@ -29,6 +31,9 @@ const SearchBox = (props) => {
         setShow(false);
     }
 
+    const searchClick = () => {
+        router.push('/list');
+    };
 
     return(
         <ul className="search-box">
@@ -45,11 +50,10 @@ const SearchBox = (props) => {
                </div>
             </li>
             <li className="guests">
-                
                 <a onClick={handleClick} className="search-item"><i className="icon icon-guests icon-1-5 mr-10"></i> Guests</a>
             </li>
             <li className="search-button">
-                <button className="btn btn-secondary p-0 text-center"><i className="icon icon-search icon-1-5 mr-10"></i> Search</button>
+                <button className="btn btn-secondary p-0 text-center" onClick={searchClick}><i className="icon icon-search icon-1-5 mr-10"></i> Search</button>
             </li>
             <li  className={"search-box__save-as-favourite " +  (props.hasAddFavourite ? '' : 'd-none')}>
                 <Button className="btn btn-text">

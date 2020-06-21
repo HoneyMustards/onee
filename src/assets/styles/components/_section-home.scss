@@ -76,11 +76,17 @@
             }
 
             .tab-item:nth-child(2n+1) {
-                padding-right: 8px;
+                
+                @include media-breakpoint-down(sm){
+                    padding-right: 8px;
+                }
             }
 
             .tab-item:nth-child(2n+2) {
-                padding-left: 8px;
+
+                @include media-breakpoint-down(sm){
+                    padding-left: 8px;
+                }
             }
 
             .destination {

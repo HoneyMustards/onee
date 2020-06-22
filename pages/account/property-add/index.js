@@ -57,9 +57,22 @@ const PropertyAdd = () => {
                                 </Accordion.Toggle>
                                 <Accordion.Collapse eventKey="0">
                                     <div className="collapse-content row">
-                                        <div className={"col-12 " + style.photos}>
+                                        <div className={"col-md-10 " + style.photosWrapper}>
                                             <ImageList />
+                                        </div>
+                                        <div className="col-md-2">
                                             <AddImage />
+                                        </div>
+                                        <div className={"col-md-12 " + style.photosActions}>
+                                            <p className={style.photosAction}>
+                                                Delete Selection(s)
+                                        </p>
+                                            <p className={style.photosAction}>
+                                                Make Cover Photo
+                                        </p>
+                                            <p className={style.photosDescription}>
+                                                Drag and drop for photo order.
+                                        </p>
                                         </div>
                                     </div>
                                 </Accordion.Collapse>
@@ -124,7 +137,7 @@ const PropertyAdd = () => {
                                                 <Input className="form-input" label="City" name="city" />
                                             </div>
                                             <div className="form-line">
-                                                <Textarea rows={3} className="form-input" label="Adress" name="address"  />
+                                                <Textarea rows={3} className="form-input" label="Adress" name="address" />
                                             </div>
                                         </div>
                                         <div className="col-md-6">
@@ -294,7 +307,7 @@ const PropertyAdd = () => {
                                         </div>
                                         <div className="col-md-6 form-line mt-4">
                                             <Textarea rows={2} className="form-input" label="Add a note"></Textarea>
-                                        </div>                                        
+                                        </div>
                                     </div>
                                 </Accordion.Collapse>
                                 {/* end */}

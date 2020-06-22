@@ -1,6 +1,35 @@
 .photos {
+    display: flex;    
+    margin-right: 16px;
+    margin-bottom: 30px;
+}
+
+.photosWrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.photosActions {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.photosAction {
+    margin-right: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ef5729
+}
+
+.photosDescription {
+    font-size: 14px;
+    font-weight: 500;
+    color: #9b9b9b;
+}
+
+.checkImage {
+    margin-right: 16px;
 }
 
 .formText {

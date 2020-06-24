@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FormattedMessage } from "react-intl";
-import { useRouter } from 'next/router'
+import { connect } from 'react-redux';
 
 //Data
 import amenitiesList from '../data/amenities.json';
@@ -22,32 +21,40 @@ import DetailPhotos from '../src/components/partials/detail/photos';
 import DetailSummary from '../src/components/partials/detail/detail-summary';
 import DetailBanner from '../src/components/partials/detail/detail-banner';
 import Gallery from '../src/components/partials/detail/gallery';
-import { Next } from 'react-bootstrap/PageItem';
+//import api from '../src/api'
+import Persist from '../src/service/persist.service';
+
+// Actions
+import { setProperty } from '../store/property/actions';
 
 import fetch from 'node-fetch'
 
 const Detail = (props) => {
 
-    const router = useRouter();
+    const property = props.propertyReq.data;
 
-    console.log(props);
+    useEffect(() => {
+        props.onSetProperty(property);
+        Persist.set('property', property);
+    }, []);
 
     const [gallery, setGallery] = useState(false);
-  
+
     return (
       <Layout>
           <div className="search-box-container detail">
             <SearchBox />
           </div>
-          
+
           <div className="detail-page">
             <div className="row">
                 <div className="col-md-12 col-lg-8 detail-container">
-                    <DetailBanner />
+                    <DetailBanner photo={property.photos.items[0]} />
                     <div className="detail-content">
                         <div className="detail-content-top">
                             <div className="detail-content-header">
-                                <h1 className="detail-title">Pine Cabin With Great Sea Views In Peaceful Location</h1>
+
+                                <h1 className="detail-title">{property.title}</h1>
                                 <Rating point={3} />
                             </div>
 
@@ -55,7 +62,7 @@ const Detail = (props) => {
                                 <div className="detail-content-location">
                                     <i className="icon icon-pin fs-23"></i> Miami, Florida USA <a href="#" className="link btn-text">View on map</a>
                                 </div>
-                                <div className="detail-content-id">Property ID: 800123477</div>
+                                <div className="detail-content-id">Property ID: {property.id}</div>
                             </div>
                         </div>
 
@@ -84,8 +91,8 @@ const Detail = (props) => {
 
                 </div>
                 <div className="col-md-12 col-lg-4 detail-sidebar">
-                    <DetailPhotos />
-                    <DetailSummary />
+                    <DetailPhotos photos={property.photos.items} />
+                    <DetailSummary detail={true}/>
                 </div>
             </div>
           </div>
@@ -96,16 +103,24 @@ const Detail = (props) => {
           <Footer />
       </Layout>
     );
+};
+
+export async function getServerSideProps({query}) {
+
+    const res = await fetch(`${process.env.API_BASE_URL}/properties/${query.id}`);
+    const data = await res.json();
+
+    return {
+        props: { propertyReq : data }
+    }
 }
 
-export async function getServerSideProps() {
-    console.log('asd');
-    // Fetch data from external API
-    const res = await fetch(`https://api.github.com/repos/vercel/next.js`)
-    const data = await res.json()
-  
-    // Pass data to the page via props
-    return { props: { data } }
-}
+const mapStateToProps = (state) => ({
+    property: state.property
+});
 
-export default Detail;
+const mapDispatchToProps = (dispatch) => ({
+    onSetProperty: (property) => dispatch(setProperty(property))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Detail);

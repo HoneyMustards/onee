@@ -1,38 +1,79 @@
-import React, {useState} from 'react';
-
+import React, {useState, useEffect} from 'react';
+import Link from 'next/link';
+import { connect } from 'react-redux';
 import Button from '../../elements/form/button';
 import SummaryBox from './summary-box';
+import { Booking } from '../../../../store/booking/js/Booking';
+import { setBooking } from '../../../../store/booking/actions';
+
 
 const DetailSummary = (props) => {
 
+    const initial = {
+        guests: [
+            {
+                name: '',
+                lastname: ''
+            },
+            {
+                name: '',
+                lastname: ''
+            }
+        ],
+        billing: {
+            name: '',
+            lastname: '',
+            phone: '',
+            email: '',
+            address: ''
+        },
+        contact: {
+            name: '',
+            lastname: '',
+            phone: '',
+            email: ''
+        }
+    };
+
+    //const bookingReq = {...Booking, ...initial };
+
+    useEffect(() => {
+        //props.onSetBooking(bookingReq)
+    }, []);
+
+    const booking = props.booking.property;
+    const property = props.property.property;
+
+    console.log(props)
+
+    const guests = (booking.guests || []).map((item, index) => {
+        return (
+            <li key={item.name+index}>{ `${item.name} ${item.lastname}` }</li>
+        )
+    });
+
     return(
         <div className="detail-summary">
-            {props.property &&
+            {!props.detail &&
             <div className="summary-property">
-                <div className="summary-property-img"><img src="./images/detail/detail.png" alt="" /></div>
+                <div className="summary-property-img"><img src={property.photos?.items[0].url} alt="" /></div>
                 <div className="summary-property-content">
-                    <div className="summary-property-name">Pine Cabin With Great Sea Views In Peaceful Location</div>
-                    <div className="summary-property-location"><i className="icon icon-pin"></i>Miami, Florida USA</div>
+                    <div className="summary-property-name">{property.name}</div>
+                    <div className="summary-property-location"><i className="icon icon-pin"></i>{`${property.location?.address.city}, ${property.location?.address.country}`}</div>
                 </div>
             </div>}
             <div className="detail-summary-line">
                 <div className="column">
-                    <SummaryBox label='Check-In'>Mon, Dec 1</SummaryBox>
+                    <SummaryBox label='Check-In'>{`${booking.checkIn}`}</SummaryBox>
                 </div>
                 <div className="column">
-                    <SummaryBox label='Check-Out'>Tue, Dec 17</SummaryBox>
+                    <SummaryBox label='Check-Out'>{`${booking.checkOut}`}</SummaryBox>
                 </div>
             </div>
-            {!props.property &&
-            <div className="detail-summary-line">
-                <SummaryBox label='Guest'>2 Adults, 2 Children</SummaryBox>
-            </div>}
             <div className="detail-summary-line">
                 <SummaryBox label='Guests'>
-                    <ul className="summary-box-list">
-                        <li>John Doe</li>
-                        <li>Jessica Doe</li>
-                        <li>Jane Doe</li>
+                    <ul className="summary-box-list" >
+                        {guests}
                     </ul>
                 </SummaryBox>
             </div>
@@ -47,9 +88,11 @@ const DetailSummary = (props) => {
             <div className="detail-summary-line">
                 <SummaryBox label='Contact Info'>
                     <ul className="summary-box-list">
-                        <li>John Doe</li>
-                        <li>+1 (333) 444 6765</li>
-                        <li>johndoe@email.com</li>
+                        {/*}
+                        <li>{`${booking.contact.name} ${booking.contact.lastname}`}</li>
+                        <li>{booking.contact.phone}</li>
+                        <li>{booking.contact.email}</li>
+                        {*/}
                     </ul>
                 </SummaryBox>
             </div>
@@ -76,9 +119,11 @@ const DetailSummary = (props) => {
                     <span>Total</span> $7500
                 </div>
             </div>
-            {!props.property &&
+            {props.detail &&
             <div className="detail-summary-buttons">
-                <Button className="btn-secondary btn-block btn-lg">Book Now</Button>
+                <Link href="/checkout">
+                    <Button className="btn-secondary btn-block btn-lg">Book Now</Button>
+                </Link>
                 <div className="detail-summary-favourite">
                     <i className="icon icon-heart"></i>
                 </div>
@@ -86,5 +131,43 @@ const DetailSummary = (props) => {
         </div>
     )
 };
-  
-export default DetailSummary;
+
+/*
+const mapStateToProps = state => state;
+
+export default connect(mapStateToProps)(DetailSummary);
+*/
+  /*
+export async function getServerSideProps() {
+
+    const params = {
+        data: {
+            id: '',
+            property: {},
+            propertyId: ''
+        }
+    }
+
+
+
+    const res = await api.property.setBooking(params)
+   x
+
+    return {
+        props: { bookingReq : Booking }
+    }
+
+}
+*/
+
+const mapStateToProps = (state) => ({
+    booking: state.booking,
+    property: state.property
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    onSetBooking: data => dispatch(setBooking(data))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(DetailSummary);
+

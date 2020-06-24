@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
-import { useAuth0 } from "../../../../../react-auth0-spa";
+import { withAuth, withLoginRequired, useAuth } from 'use-auth0-hooks';
+
 
 import Link from 'next/link';
 
 const ProfileMenus = () => {
 
-  //const { logout } = useAuth0();
+    const { logout } = useAuth();
 
   return(
     <ul className="menu-list list">
@@ -17,10 +18,12 @@ const ProfileMenus = () => {
         {/*<li>Inbox <div className="badge badge-pill badge-secondary badge-notification">3</div></li> */}
         {/*<li>To Do List</li>*/}
         <li>Edit My Profile</li>
-        <li>Help</li>
-        <li onClick={() => logout()}>Log Out</li>
+        {/*<li>Help</li>*/}
+        <li onClick={() => logout({ returnTo: process.env.POST_LOGOUT_REDIRECT_URI })}>Log Out</li>
     </ul>
   )
 };
-  
-export default ProfileMenus;
+
+export default withLoginRequired (
+    withAuth(ProfileMenus)
+);

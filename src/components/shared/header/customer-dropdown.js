@@ -2,7 +2,6 @@ import React, {useState, useRef, useEffect} from 'react';
 import { FormattedMessage } from "react-intl";
 import Popover from 'react-bootstrap/Popover';
 import Overlay from 'react-bootstrap/Overlay';
-import OverlayTrigger from 'react-bootstrap/Overlay';
 import { connect } from 'react-redux';
 
 // Actions
@@ -26,7 +25,7 @@ const Customer = (props) => {
     const handleClick = (event) => {
           setShow(!show);
           setTarget(event.target);
-    }
+    };
 
     return(
       <div className="customer-dropdown">
@@ -47,7 +46,7 @@ const Customer = (props) => {
           </Overlay>
       </div>
     )
-}
+};
 
 const mapStateToProps = state => ({
   customers: state.customers

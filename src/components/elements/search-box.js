@@ -50,6 +50,7 @@ const SearchBox = (props) => {
                </div>
             </li>
             <li className="guests">
+                <label htmlFor="">Guests</label>
                 <a onClick={handleClick} className="search-item"><i className="icon icon-guests icon-1-5 mr-10"></i> Guests</a>
             </li>
             <li className="search-button">

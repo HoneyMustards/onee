@@ -31,5 +31,5 @@ const Layout = props => {
         </IntlProvider>
     )
 };
-  
-  export default Layout;
+
+export default Layout;

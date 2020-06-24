@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { FormattedMessage } from "react-intl";
+import { connect } from 'react-redux';
 import { Formik, Form, FieldArray } from "formik";
 
 import Checkbox from '../../elements/form/checkbox';
 import Textarea from '../../elements/form/textarea';
 import Button from '../../elements/form/button';
+import {nextStep} from "../../../../store/booking/actions";
 
 const ServicesStep = () => {
 
@@ -22,7 +23,7 @@ const ServicesStep = () => {
         <div className="col-md-12 col-lg-8 detail-container">
             <div className="detail-content">
                 <div className="checkout-services">
-                    
+
                         <Formik
                             initialValues={initialValue}
                             onSubmit={values =>
@@ -33,7 +34,7 @@ const ServicesStep = () => {
                             }
                             render={({ values, handleChange }) => (
                                 <Form>
-                                
+
                                 <div className="checkout-section">
                                     <div className="checkout-title">Additional Services</div>
                                     <div className="form-content">
@@ -57,20 +58,20 @@ const ServicesStep = () => {
                                                 <Checkbox >Private Cook</Checkbox>
                                             </div>
                                         </div>
-                                        
+
                                         <div className="form-line">
                                             <Textarea rows={3} className="form-input" label="Notes" name="billing.address" onChange={handleChange} value={values.billing.address} />
                                         </div>
                                     </div>
                                 </div>
 
-                                
+
                                 <button type="submit">Submit</button>
                                 </Form>
                             )}
                             />
-                            
-                    
+
+
                 </div>
             </div>
             <div className="checkout-buttons">
@@ -79,6 +80,14 @@ const ServicesStep = () => {
             </div>
         </div>
     );
-}
+};
 
-export default ServicesStep;
+const mapStateToProps = (state) => {
+    return state;
+};
+
+const mapDispatchToProps = (dispatch) => ({
+    onNextStep: () => dispatch(nextStep())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ServicesStep);

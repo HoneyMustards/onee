@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { FormattedMessage } from "react-intl";
-import {Accordion, Button, useAccordionToggle} from 'react-bootstrap';
+import {Accordion, Button} from 'react-bootstrap';
 
 import LanguageDropdown from '../../elements/languageDropdown';
 
@@ -14,7 +13,7 @@ const Footer = (props) => {
         accordion == key ? setAccordion(null) : setAccordion(key);
     };
 
-    const localNumber = localNumbers.map((item,i) => 
+    const localNumber = localNumbers.map((item,i) =>
         <li key={i}><a href={`tel:${item.number}`}><img src={item.flag} alt={item.name}/>{item.number}</a></li>
     );
 
@@ -103,7 +102,7 @@ const Footer = (props) => {
             <div className="footer-bottom">
                 <div className="row">
                     <div className="col-dm-12 col-md-5 copyright">
-                        © 2020 onee, all rights reserved. 
+                        © 2020 onee, all rights reserved.
                     </div>
                     <div className="col-sm-12 col-md-7 footer-social">
                         <ul className="list social-list">
@@ -120,5 +119,5 @@ const Footer = (props) => {
         </section>
     )
 };
-  
+
 export default Footer;

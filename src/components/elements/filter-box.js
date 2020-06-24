@@ -70,9 +70,8 @@ const FilterBox = (props) => {
                 break
         }
         props.handleHideFilter();
-    };    
+    };
 
-    
 
     const handleHideFilter = () => props.handleHideFilterModal(false);
     const handleChangePrice = (value) => setPrices([...value]);
@@ -83,7 +82,7 @@ const FilterBox = (props) => {
             refPriceMin.current.value = prices[0];
             refPriceMax.current.value = prices[1];
         }
-    }, [prices])
+    }, [prices]);
 
 
     return (
@@ -210,6 +209,6 @@ const FilterBox = (props) => {
 
         </div>
     )
-}
+};
 
 export default FilterBox;

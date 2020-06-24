@@ -7,7 +7,7 @@ export const setCustomers = (payload) => {
       type: SET_CUSTOMERS,
       payload
     };
-}
+};
 
 export const getCustomers = () => {
   return async (dispatch, getState) => {

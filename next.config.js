@@ -4,10 +4,11 @@ require('dotenv').config();
 const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = ({
+    distDir: 'dist',
     assetPrefix: isProd ? '/' : '/',
     webpack(config, options) {
         config.module.rules.push(
-              
+
         );
         config.plugins.push(
             new IconfontPlugin({
@@ -24,11 +25,13 @@ module.exports = ({
               })
         );
         return config;
-    }, 
+    },
     env: {
-        BASE_URL: process.env.BASE_URL,
-        REDIRECT_URL: process.env.REDIRECT_URL,
-        CLIENT_ID: process.env.CLIENT_ID,
-        DOMAIN: process.env.DOMAIN
+        API_BASE_URL: process.env.API_BASE_URL,
+        AUTH0_DOMAIN: process.env.DOMAIN,
+        AUTH0_CLIENT_ID: process.env.CLIENT_ID,
+        REDIRECT_URI: process.env.REDIRECT_URL,
+        POST_LOGOUT_REDIRECT_URI: process.env.REDIRECT_URL,
+        MAP_KEY: process.env.MAP_KEY
     }
 })

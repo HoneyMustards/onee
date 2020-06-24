@@ -3,13 +3,14 @@
     height: 80px;
     background-image: url('../../img/page-header.png');
     background-position: top left;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #fff;
-    
 
     .header {
+        margin: 0;
         font-size: 32px;
         font-weight: 500;
         color: #fff;

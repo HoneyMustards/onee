@@ -1,12 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { FormattedMessage } from "react-intl";
+import { connect } from 'react-redux';
 import { Formik, Form, FieldArray } from "formik";
+
+// Actions
+import { nextStep } from '../../../../store/booking/actions';
 
 import Input from '../../elements/form/input';
 import Textarea from '../../elements/form/textarea';
 import Button from '../../elements/form/button';
+import Link from "next/link";
+import { setBooking } from '../../../../store/booking/actions';
 
-const BookingStep = () => {
+const BookingStep = (props) => {
+
+    useEffect(() => {
+        props.onSetBooking(props.booking.property)
+    }, []);
+
+    //const initialValues = props.booking.property
 
     const initialValue = {
         guests: [
@@ -32,22 +43,26 @@ const BookingStep = () => {
             phone: '',
             email: ''
         }
-    }
+    };
 
     return (
         <div className="col-md-12 col-lg-8 detail-container">
-            <div className="detail-content">
-                <div className="checkout-booking-step">
-                    
-                        <Formik
-                            initialValues={initialValue}
-                            onSubmit={values =>
-                                setTimeout(() => {
-                                    alert(JSON.stringify(values, null, 2));
-                                }, 100)
-                            }
-                            render={({ values, handleChange }) => (
-                                <Form>
+            <Formik
+                initialValues={initialValue}
+                onSubmit={values =>
+                    setTimeout(() => {
+                        alert(JSON.stringify(values, null, 2));
+                        props.onNextStep();
+                    }, 100)
+                }
+                onChange={() => {
+                    handleChange()
+                }}
+                render={({ values, handleChange }) => (
+                    <Form>
+                        <div className="detail-content">
+                            <div className="checkout-booking-step">
+
                                 <div className="checkout-section">
                                     <div className="checkout-title">Guests</div>
                                     <div className="form-content">
@@ -67,7 +82,7 @@ const BookingStep = () => {
                                                     </div>
                                                 ))
                                                 }
-                                                <button type="button" className="btn btn-outline-secondary btn-sm" onClick={() => arrayHelpers.push('')}>+ Add Line</button>
+                                                <button type="button" className="btn btn-outline-secondary btn-sm" onClick={() => arrayHelpers.push('')}>+ Add</button>
                                             </div>
                                             )}
                                         />
@@ -104,20 +119,31 @@ const BookingStep = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit">Submit</button>
-                                </Form>
-                            )}
-                            />
-                            
-                    
-                </div>
-            </div>
-            <div className="checkout-buttons">
-                <Button className="btn-outline-secondary btn-lg">Property Detail</Button>
-                <Button className="btn-secondary btn-lg">Additional Services</Button>
-            </div>
+
+                            </div>
+                        </div>
+                        <div className="checkout-buttons">
+                            <Link href="/detail">
+                                <Button className="btn-outline-secondary btn-lg">Property Detail</Button>
+                            </Link>
+                            <Button className="btn-secondary btn-lg">Payment</Button>
+                        </div>
+                    </Form>
+                )}
+            />
+
         </div>
     );
-}
+};
 
-export default BookingStep;
+const mapStateToProps = (state) => ({
+    booking: state.booking
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    onNextStep: () => dispatch(nextStep()),
+    onSetBooking: data => dispatch(setBooking(data))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookingStep);
+

@@ -2,24 +2,25 @@ import React, {useState} from 'react';
 
 import DetailBanner from './detail-banner';
 
-const DetailPhotos = () => {
+const DetailPhotos = ({photos}) => {
 
     return(
         <div className="detail-photos">
-            <DetailBanner />
+            <DetailBanner photo={photos[0]} />
             <ul className="detail-photos-list">
-                <li><span><img src="./images/detail/detail.png" alt="" /></span></li>
-                <li><span><img src="./images/detail/detail.png" alt="" /></span></li>
-                <li><span><img src="./images/detail/detail.png" alt="" /></span></li>
-                <li>
-                    <span>
-                        <img src="./images/detail/detail.png" alt="" />
-                        <div className="detail-photos-overlay">+32</div>
-                    </span>
-                </li>
+                {
+                    photos.slice(1,5).map((item,i) =>
+                        <li key={i}>
+                            <span>
+                                <img src={item.url} alt="" />
+                                {(i === 3 && photos.length > 5) && <div className="detail-photos-overlay">+{photos.length - 5}</div>}
+                            </span>
+                        </li>
+                    )
+                }
             </ul>
         </div>
     )
 };
-  
+
 export default DetailPhotos;

@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import { FormattedMessage } from "react-intl";
-import { useAuth0 } from "../../../../react-auth0-spa";
+//import { useAuth0 } from "../../../../react-auth0-spa";
 
 import Link from '../../elements/link';
 import Button from '../../elements/form/button';
 
 const GuestUser = () => {
 
-  const { loginWithRedirect } = useAuth0();
+  //const { loginWithRedirect } = useAuth0();
 
   const login = () => {
       
@@ -15,7 +15,7 @@ const GuestUser = () => {
 
   return(
     <div className="login-buttons">
-      <Button onClick={() => loginWithRedirect({})}>
+      <Button >
         <FormattedMessage id="nav.login" />
       </Button>
       <Link link="/register" className="btn-outline-primary">

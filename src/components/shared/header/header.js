@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Link from "next/link";
-import { useAuth0 } from "../../../../react-auth0-spa";
 import { connect } from 'react-redux';
 import { setUser, setToken } from '../../../../store/user/action';
 
@@ -11,13 +10,13 @@ import Profilemobile from './nav/profile-mobile';
 
 const Header = (props) => {
 
-  const { loading, user, getTokenSilently } = useAuth0();
+  //const { loading, user, getTokenSilently } = useAuth0();
 
   const initUser = async () => {
     try {
       const token = await getTokenSilently();
 
-      props.onSetUser(user);
+      //props.onSetUser(user);
       props.onSetToken(token);
 
     } catch (error) {
@@ -25,12 +24,12 @@ const Header = (props) => {
     }
   };
 
-  if (!loading) {
+  /* if (!loading) {
     initUser();
-  }
+  } */
 
   const profile = (
-    user ? <Profile /> : <GuestUser />
+    <Profile />
   );
 
   return(
@@ -43,7 +42,7 @@ const Header = (props) => {
           <Link href="/"><div className="logo"></div></Link>
         </div>
         <div className="col-4 col-md-9 header-content">
-        { loading ? 'Loading...' :  profile }
+          { profile }
         </div>
         <Profilemobile />
       </div>
@@ -59,5 +58,5 @@ const mapDispatchToProps = {
   onSetUser: setUser,
   onSetToken: setToken
 };
-  
+
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

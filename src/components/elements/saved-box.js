@@ -12,15 +12,15 @@ const SavedBox = () => {
                     <p className="more">
                         The best holiday options for Ethem.
                     </p>
-                </div>   
+                </div>
                 <div className="saved-item">
                     <p className="more">
                         The best holiday options for Ethem.
                     </p>
-                </div>                                        
+                </div>
             </div>
         </div>
     )
-}
+};
 
 export default SavedBox;

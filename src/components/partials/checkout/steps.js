@@ -1,17 +1,18 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 
-const stepList = ["Booking", "Additional Services", "Payment", "Confirmation"];
+const stepList = ["Booking", "Payment", "Confirmation"];
 
 const Steps = (props) => {
 
+    const { active } = props;
     const allSteps = stepList.map((item,i) => {
 
         let stepClass = '';
 
-        if(props.active > i+1) {
+        if(active > i+1) {
             stepClass = 'completed';
-        } else if(props.active == i+1) {
+        } else if(active === i+1) {
             stepClass = 'active';
         }
 
@@ -34,10 +35,10 @@ const Steps = (props) => {
 
 Steps.propTypes = {
     active: PropTypes.number
-}
+};
 
 Steps.defaultProps = {
-    active: 3
-} 
-  
+    active: 1
+};
+
 export default Steps;

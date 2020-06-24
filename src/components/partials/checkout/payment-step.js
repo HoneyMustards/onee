@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FormattedMessage } from "react-intl";
+import { connect } from 'react-redux';
 import { Formik, useFormik } from "formik";
 import Cards from 'react-credit-cards';
 import InputMask from 'react-input-mask';
@@ -9,6 +9,7 @@ import Checkbox from '../../elements/form/checkbox';
 import Input from '../../elements/form/input';
 import Button from '../../elements/form/button';
 import AccordionButton from '../../elements/accordion/accordion-button';
+import {nextStep, prevStep} from "../../../../store/booking/actions";
 
 const PaymentStep = (props) => {
 
@@ -28,6 +29,7 @@ const PaymentStep = (props) => {
         },
         onSubmit: values => {
           alert(JSON.stringify(values, null, 2));
+          props.onNextStep();
         }
     });
 
@@ -56,7 +58,7 @@ const PaymentStep = (props) => {
                             <div className="collapse-content row">
                                 <div className="col-6">
                                     <div className="form-line form-input">
-                                    <InputMask mask="9999 9999 9999 9999" onBlur={(e) => maskClear(e,16)} value={formik.values.cardNumber} onChange={formik.handleChange}>
+                                    <InputMask mask="9999 9999 9999 9999" onBlur={(e) => maskClear(e,16)} value={formik.values.cardNumber} onChange={formik.handleChange} onFocus={(e) => setFocus(e.target.name)}>
                                         {(inputProps) => (
                                             <div className="input-box form-input">
                                                 <input type="text" className="form-control" name="cardNumber" id="cardNumber" required="required" />
@@ -64,13 +66,13 @@ const PaymentStep = (props) => {
                                             </div>
                                         )}
                                     </InputMask>
-                                        
+
                                     </div>
                                     <div className="form-line">
-                                        <Input className="form-input" label="Name on Card" name="cardName" onChange={formik.handleChange}/>
+                                        <Input className="form-input" label="Name on Card" name="cardName" onChange={formik.handleChange} onFocus={(e) => setFocus(e.target.name)} />
                                     </div>
                                     <div className="form-line column">
-                                        <InputMask mask="99/99" value={formik.values.expiry} onChange={formik.handleChange}>
+                                        <InputMask mask="99/99" value={formik.values.expiry} onChange={formik.handleChange} onFocus={(e) => setFocus(e.target.name)}>
                                             {(inputProps) => (
                                                 <div className="input-box form-input">
                                                     <input type="text" className="form-control" name="expiry" id="expiry" required="required" />
@@ -132,9 +134,9 @@ const PaymentStep = (props) => {
                 <div className="payment-terms">
                     By clicking “Submit Payment” you are agreeing to our <a href="#" className="text-secondary"><strong>Terms and Conditions, Privacy Policy, Cancellation Policy, Damage Policy, House Rules</strong></a> and to receive booking-related texts. Standard messaging rates may apply.
                 </div>
-                
+
                 <div className="checkout-buttons">
-                    <Button className="btn-outline-secondary btn-lg">Additional Services</Button>
+                    <a className="btn-outline-secondary btn-lg" onClick={props.onPrevStep}>Booking</a>
                     <Button className="btn-secondary btn-lg">Submit Payment</Button>
                 </div>
 
@@ -143,4 +145,13 @@ const PaymentStep = (props) => {
     );
 }
 
-export default PaymentStep;
+const mapStateToProps = (state) => {
+    return state;
+};
+
+const mapDispatchToProps = (dispatch) => ({
+    onNextStep: () => dispatch(nextStep()),
+    onPrevStep: () => dispatch(prevStep()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(PaymentStep);

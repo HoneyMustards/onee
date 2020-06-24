@@ -8,16 +8,15 @@ app.prepare().then(() => {
 	const server = express();
 
 	// Custom routes go here
-	server.get('/detail/:name', (req, res) => {
-		const mergedQuery = Object.assign({}, req.query, req.params);
-		return app.render(req, res, '/detail', mergedQuery);
+	server.get('/detail/:id', (req, res) => {
+		return app.render(req, res, '/detail', { id: req.params.id });
 	});
 
 	// This is the default route, don't edit this.
 	server.get('*', (req, res) => {
 		return handle(req, res);
 	});
-	const port = process.env.PORT || 5000;
+	const port = process.env.PORT || 80;
 
 	server.listen(port, err => {
 		if (err) throw err;

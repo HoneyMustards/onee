@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="22px" viewBox="0 0 16 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>icon-pin-colored</title>
+    <desc>Created with Sketch.</desc>
+    <g id="05---Listing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-1148.000000, -609.000000)" id="Maps">
+            <g transform="translate(862.000000, 210.000000)">
+                <g id="icon-pin-colored" transform="translate(286.000000, 399.000000)">
+                    <g id="icon-pin">
+                        <path d="M13.5790769,12.8947692 L7.95076923,21.0227692 L2.3134359,12.8820513 C0.180512821,10.0381538 0.486153846,5.36615385 2.96820513,2.88451282 C4.29907692,1.55364103 6.06851282,0.820512821 7.95076923,0.820512821 C9.83302564,0.820512821 11.6024615,1.55364103 12.9337436,2.88451282 C15.4157949,5.36615385 15.7214359,10.0381538 13.5790769,12.8947692 Z" id="Shape" stroke="#F1561A" fill="#EF5729" fill-rule="nonzero"></path>
+                        <path d="M8.02338462,4.92307692 C6.44020513,4.92307692 5.15158974,6.21169231 5.15158974,7.79487179 C5.15158974,9.37805128 6.44020513,10.6666667 8.02338462,10.6666667 C9.6065641,10.6666667 10.8951795,9.37805128 10.8951795,7.79487179 C10.8951795,6.21169231 9.6065641,4.92307692 8.02338462,4.92307692 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

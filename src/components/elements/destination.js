@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from "react-intl";
 
 const Destination = props => {
 
@@ -15,10 +14,10 @@ const Destination = props => {
 
 Destination.propTypes = {
     name: PropTypes.string
-}
+};
 
 Destination.defaultProps = {
     name: ''
-} 
+};
 
 export default Destination;

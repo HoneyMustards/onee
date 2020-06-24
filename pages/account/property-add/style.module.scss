@@ -1,0 +1,93 @@
+.photos {
+    display: flex;    
+    margin-right: 16px;
+    margin-bottom: 30px;
+}
+
+.photosWrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.photosActions {
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.photosAction {
+    margin-right: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ef5729
+}
+
+.photosDescription {
+    font-size: 14px;
+    font-weight: 500;
+    color: #9b9b9b;
+}
+
+.checkImage {
+    margin-right: 16px;
+}
+
+.formText {
+    width: 90px;
+    height: 32px;
+    border-radius: 75px;
+    border: 1px solid #9b9b9b;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #4a4a4a;
+}
+
+.divider {
+    width: 1px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #ef5729;
+}
+
+.map {
+    height: 225px;
+    border-radius: 8px;
+}
+
+.counter {
+    width: 100%;
+}
+
+.counterSelect {
+    width: 350px;
+    margin-right: 24px;
+    margin-bottom: 32px;
+}
+
+.flexWrap {
+    flex-wrap: wrap;
+}
+
+.counterHeader {
+    font-size: 18px;
+    font-weight: 600;
+    color: #4a4a4a;
+    margin-bottom: 15px;
+}
+
+.mapWrapper {
+    height: 100%;
+    position: relative;
+
+    &:before {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        width: calc(100% + 20px);
+        height: calc(100% + 20px);
+        border: 5px solid  #fff;
+        z-index: 2;
+        content: "";
+    }
+}

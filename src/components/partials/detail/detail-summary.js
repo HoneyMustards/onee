@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { connect } from 'react-redux';
 import Button from '../../elements/form/button';
 import SummaryBox from './summary-box';
-import { Booking } from '../../../../store/booking/js/Booking';
 import { setBooking } from '../../../../store/booking/actions';
 
 
@@ -44,32 +43,14 @@ const DetailSummary = (props) => {
     const booking = props.booking.property;
     const property = props.property.property;
 
-    console.log(props)
-
     const guests = (booking.guests || []).map((item, index) => {
         return (
             <li key={item.name+index}>{ `${item.name} ${item.lastname}` }</li>
         )
     });
 
-    return(
-        <div className="detail-summary">
-            {!props.detail &&
-            <div className="summary-property">
-                <div className="summary-property-img"><img src={property.photos?.items[0].url} alt="" /></div>
-                <div className="summary-property-content">
-                    <div className="summary-property-name">{property.name}</div>
-                    <div className="summary-property-location"><i className="icon icon-pin"></i>{`${property.location?.address.city}, ${property.location?.address.country}`}</div>
-                </div>
-            </div>}
-            <div className="detail-summary-line">
-                <div className="column">
-                    <SummaryBox label='Check-In'>{`${booking.checkIn}`}</SummaryBox>
-                </div>
-                <div className="column">
-                    <SummaryBox label='Check-Out'>{`${booking.checkOut}`}</SummaryBox>
-                </div>
-            </div>
+    const checkoutContent = (
+        <div>
             <div className="detail-summary-line">
                 <SummaryBox label='Guests'>
                     <ul className="summary-box-list" >
@@ -106,6 +87,30 @@ const DetailSummary = (props) => {
                     </ul>
                 </SummaryBox>
             </div>
+        </div>
+    );
+
+    return(
+        <div className="detail-summary">
+            {!props.detail &&
+            <div className="summary-property">
+                <div className="summary-property-img"><img src={property.photos?.items[0].url} alt="" /></div>
+                <div className="summary-property-content">
+                    <div className="summary-property-name">{property.name}</div>
+                    <div className="summary-property-location"><i className="icon icon-pin"></i>{`${property.location?.address.city}, ${property.location?.address.country}`}</div>
+                </div>
+            </div>}
+            <div className="detail-summary-line">
+                <div className="column">
+                    <SummaryBox label='Check-In'>{`${booking.checkIn}`}</SummaryBox>
+                </div>
+                <div className="column">
+                    <SummaryBox label='Check-Out'>{`${booking.checkOut}`}</SummaryBox>
+                </div>
+            </div>
+
+            {!props.detail && checkoutContent}
+
             <div className="detail-summary-line total-line">
                 <div className="detail-summary-row mt-10">
                     <span>$450 x 16 nights</span> $7200

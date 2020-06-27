@@ -24,6 +24,11 @@
         max-height: 700px;
         border-radius: 10px;
         overflow: hidden;
+        cursor: pointer;
+
+        img {
+            min-width: 100%;
+        }
 
         @include media-breakpoint-down(md){
             display: none;
@@ -106,7 +111,7 @@
     }
 
     &-photos {
-        
+
         &-list {
             display: flex;
             flex-wrap: wrap;
@@ -121,7 +126,7 @@
                 padding-right: 8px;
                 margin-bottom: 15px;
                 cursor: pointer;
-    
+
                 @include media-breakpoint-down(md){
                     width: 24%;
                     margin-top: 20px;
@@ -131,16 +136,16 @@
                 @include media-breakpoint-down(sm){
                     margin: 10px 0;
                 }
-    
+
                 &:nth-child(2n){
                     padding-right: 0;
                     padding-left: 8px;
-    
+
                     @include media-breakpoint-down(md){
                         padding: 0;
                     }
                 }
-    
+
                 span {
                     position: relative;
                     display: inline-block;
@@ -154,14 +159,14 @@
                     @include media-breakpoint-down(sm){
                         border-radius: 4px;
                     }
-    
+
                     &:before {
                         content: '';
                         display: block;
                         padding-bottom: 70%;
                     }
                 }
-    
+
                 img {
                     position: absolute;
                     top: 0;
@@ -234,7 +239,7 @@
             display: flex;
             justify-content: space-between;
             padding-top: 10px;
-            color: #EF5729;  
+            color: #EF5729;
             font-size: 16px;
             font-weight: 600;
             border-top: 1px solid #E5E5E5;

@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const CardItem = (props) => {
 
-    const { title, priceInfo, photos } = props;
+    const { title, priceInfo, photos, location } = props;
 
     const params = {
         pagination: {
@@ -32,7 +32,7 @@ const CardItem = (props) => {
     return (
         <Card className={"card-item " + props.variant}>
             <Card.Header>
-                <Link href={`/detail?id=${props.id}`}>
+                <Link href={`/detail?id=${props.id}`} as={`/detail/${props.id}`}>
                     <a>
                         <Swiper {...params}>
                             {allImages}
@@ -45,11 +45,11 @@ const CardItem = (props) => {
                 <div className="container">
                     <div className="row d-flex justify-content-between align-items-center">
                         <div className="col-5 p-0">
-                            <Card.Subtitle className="mb-2 text-muted">New York</Card.Subtitle>
-                            <Rating point={3.5} />
+                            <Card.Subtitle className="mb-2 text-muted">{location?.address.city}</Card.Subtitle>
+                            {/* <Rating point={3.5} /> */}
                         </div>
                         <div className="col-7 p-0 text-right">
-                            <Card.Subtitle className="mb-2 text-info"><span>%8</span> reseller margin</Card.Subtitle>
+                            {/* <Card.Subtitle className="mb-2 text-info"><span>%8</span> reseller margin</Card.Subtitle> */}
                             <div className="d-flex align-items-center justify-content-end">
                                 <div className="badge-radius badge-radius--promotion mr-2">
                                     PROMOTION PROPERTY

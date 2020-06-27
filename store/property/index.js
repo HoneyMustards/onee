@@ -1,7 +1,8 @@
-import { SET_PROPERTY } from './actions.type';
+import { SET_PROPERTY, SHOW_GALLERY } from './actions.type';
 
 const initialState = {
-    property: {}
+    property: {},
+    gallery: false
 };
 
 export default (state = initialState, action) => {
@@ -10,6 +11,11 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 property: action.payload
+            };
+        case SHOW_GALLERY:
+            return {
+                ...state,
+                gallery: action.payload
             };
         default:
             return state

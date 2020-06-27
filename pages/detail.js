@@ -31,7 +31,9 @@ import fetch from 'node-fetch'
 
 const Detail = (props) => {
 
-    const property = props.propertyReq.data;
+    const property = props.data.data;
+
+    console.log(property);
 
     useEffect(() => {
         props.onSetProperty(property);
@@ -41,7 +43,7 @@ const Detail = (props) => {
     const [gallery, setGallery] = useState(false);
 
     return (
-      <Layout>
+      <Layout title={property?.title}>
           <div className="search-box-container detail">
             <SearchBox />
           </div>
@@ -49,20 +51,20 @@ const Detail = (props) => {
           <div className="detail-page">
             <div className="row">
                 <div className="col-md-12 col-lg-8 detail-container">
-                    <DetailBanner photo={property.photos.items[0]} />
+                    <DetailBanner photo={property?.photos.items[0]} />
                     <div className="detail-content">
                         <div className="detail-content-top">
                             <div className="detail-content-header">
 
-                                <h1 className="detail-title">{property.title}</h1>
-                                <Rating point={3} />
+                                <h1 className="detail-title">{property?.title}</h1>
+                                {/*<Rating point={3} />*/}
                             </div>
 
                             <div className="detail-content-info">
                                 <div className="detail-content-location">
-                                    <i className="icon icon-pin fs-23"></i> Miami, Florida USA <a href="#" className="link btn-text">View on map</a>
+                                    <i className="icon icon-pin fs-23"></i> {property.location?.address.city}, {property.location?.address.country} <a className="link btn-text">View on map</a>
                                 </div>
-                                <div className="detail-content-id">Property ID: {property.id}</div>
+                                <div className="detail-content-id">Property ID: {property?.id}</div>
                             </div>
                         </div>
 
@@ -70,14 +72,12 @@ const Detail = (props) => {
 
                         <h2 className="detail-content-title">Description</h2>
                         <p className="detail-content-text">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            <br/><br/>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            {property.basicInfo.description.desc}
                         </p>
                         <hr/>
 
-                        <Comments comments={comments} />
-                        <hr/>
+                        {/*<Comments comments={comments} />
+                        <hr/>*/}
                         <Nearby list={nearbyList} />
 
                         <div className="detail-map">
@@ -91,13 +91,13 @@ const Detail = (props) => {
 
                 </div>
                 <div className="col-md-12 col-lg-4 detail-sidebar">
-                    <DetailPhotos photos={property.photos.items} />
+                    <DetailPhotos photos={property?.photos.items} />
                     <DetailSummary detail={true}/>
                 </div>
             </div>
           </div>
 
-          <Gallery show={gallery} />
+          <Gallery photos={property?.photos.items} />
 
           <Newsletter />
           <Footer />
@@ -111,13 +111,15 @@ export async function getServerSideProps({query}) {
     const data = await res.json();
 
     return {
-        props: { propertyReq : data }
+        props: { data : data }
     }
 }
 
-const mapStateToProps = (state) => ({
-    property: state.property
-});
+const mapStateToProps = (state) => {
+    return {
+        gallery: state.property.gallery
+    }
+};
 
 const mapDispatchToProps = (dispatch) => ({
     onSetProperty: (property) => dispatch(setProperty(property))

@@ -13,6 +13,7 @@ import { Auth0Provider } from 'use-auth0-hooks';
  */
 const onRedirectCallback = appState => {
   if (appState && appState.returnTo) {
+      console.log(appState)
     Router.push({
       pathname: appState.returnTo.pathname,
       query: appState.returnTo.query

@@ -1,0 +1,47 @@
+.table { 
+    width: 100%;
+    font-size: 14px;
+
+    tr {
+        border-bottom: 1px solid #d0d1d5;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+}
+
+.table tr:nth-child(odd) td {
+    background: #f2f2f2;
+}
+
+.tableImage {
+    width: 80px;
+    height: 60px;
+    border-radius: 8px;
+}
+
+.tableActions {
+    span {
+        display: inline-block;
+        margin: 0 4px;
+        color: #ef5729;
+        font-weight: 600;
+        cursor: pointer;
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    p {
+        margin-right: 16px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: normal;
+        color: #4a4a4a;
+    }
+}

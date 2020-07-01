@@ -1,13 +1,14 @@
 import React from 'react';
-import { Tab, Tabs } from 'react-bootstrap';
+import { Tab, Tabs, Button } from 'react-bootstrap';
 import Layout from '../../../src/components/layouts/layout';
 import PageHeader from '../../../src/components/elements/page-header';
 import PageMenu from '../../../src/components/elements/page-menu';
-import AccordionStatus from '../../../src/components/elements/accordion-status';
+import PropertyListTable from './table.js';
 import Footer from '../../../src/components/shared/footer/footer';
+import style from './property-list.module.scss';
 
 
-const Booking = () => {
+const PropertyList = () => {
     return (
         <Layout>
             <PageHeader header="Platinium Account" />
@@ -15,25 +16,26 @@ const Booking = () => {
             <div className="container mt-5 mb-5">
                 <div className="row">
                     <div className="col-12">
-                        <div className="box" style={{padding: '30px 40px'}}>
-                            <h2 className="mb-3">My Bookings</h2>
-                            <Tabs className="tab" defaultActiveKey="active">
-                                <Tab eventKey="active" title="Active">
-                                    <AccordionStatus />
+                        <div className="box" style={{ padding: '30px 40px' }}>
+                            <h2 className="mb-3">Property List</h2>
+                            <Tabs className="tab" defaultActiveKey="approved">
+                                <Tab eventKey="approved" title="Approved">
+                                    <PropertyListTable />
                                 </Tab>
-                                <Tab eventKey="pending" title="Pending">
+                                <Tab eventKey="incomplete" title="Incomplete">
                                     <div>2</div>
                                 </Tab>
-                                <Tab eventKey="approvals" title="Approvals">
+                                <Tab eventKey="unapproved" title="Unapproved">
                                     <div>3</div>
                                 </Tab>
-                                <Tab eventKey="completed" title="Completed">
+                                <Tab eventKey="all" title="All">
                                     <div>4</div>
                                 </Tab>
-                                <Tab eventKey="all" title="All">
-                                    <div>5</div>
-                                </Tab>                                                                
                             </Tabs>
+                            <div className={style.footer}>
+                                <p>Listing 10/120</p>
+                                <Button variant="outline-secondary"> Show More</Button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -43,4 +45,4 @@ const Booking = () => {
     )
 }
 
-export default Booking;
+export default PropertyList;
